@@ -39,6 +39,12 @@ The URL must end up pointing to the folder that contains `Release` and
 
 4. Commit and publish the updated files.
 
+Or use the update script to build, validate, commit, and push in one step:
+
+```bash
+./update-site.sh "Update package files"
+```
+
 The builder reads package metadata with `dpkg-deb -f`, adds file checksums, and
 refreshes the compressed package indexes.
 
