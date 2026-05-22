@@ -8,7 +8,7 @@ Section: Tweaks
 Priority: optional
 Depends: firmware (>= 15.0), ellekit | mobilesubstrate
 Description: AUTO TOUCH/CLICK mod menu with companion app target selector
-Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker&v=7
 Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.png
 Filename: debs/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb
 Size: 1233318

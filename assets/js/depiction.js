@@ -26,8 +26,16 @@
     main.innerHTML = "";
     document.title = title + " - DaRwin-iQ";
 
+    const prompt = document.createElement("div");
+    prompt.className = "prompt";
+    prompt.innerHTML = '<span class="prompt-user">darwin@iq</span><span class="prompt-arrow">~</span><span class="prompt-arrow">❯</span><span class="prompt-cmd">pkg info ' + field(pkg, "Package") + '</span>';
+    main.appendChild(prompt);
+    const spacer = document.createElement("div");
+    spacer.className = "spacer";
+    main.appendChild(spacer);
+
     const hero = document.createElement("div");
-    hero.className = "depiction-hero";
+    hero.className = "package-title";
 
     const icon = document.createElement("img");
     icon.className = "depiction-icon";
@@ -36,30 +44,61 @@
 
     const heading = document.createElement("div");
 
-    const label = document.createElement("p");
-    label.className = "section-label";
-    label.textContent = field(pkg, "Section", "Package");
-
     const h1 = document.createElement("h1");
     h1.textContent = title;
+
+    const id = document.createElement("div");
+    id.className = "package-id";
+    id.textContent = field(pkg, "Package");
 
     const summary = document.createElement("p");
     summary.textContent = lines[0];
 
-    heading.append(label, h1);
+    heading.append(h1, id);
     hero.append(icon, heading);
-    main.append(hero, summary);
+    main.append(hero);
+
+    const infoLine = document.createElement("div");
+    infoLine.className = "output-line highlight";
+    infoLine.textContent = "  Latest Package     :  " + title;
+    main.appendChild(infoLine);
+
+    const repoLine = document.createElement("div");
+    repoLine.className = "output-line";
+    repoLine.textContent = "  Repository URL     :  " + repoUrl;
+    main.appendChild(repoLine);
+
+    const archLine = document.createElement("div");
+    archLine.className = "output-line";
+    archLine.textContent = "  Architecture       :  " + field(pkg, "Architecture");
+    main.appendChild(archLine);
+
+    const depLine = document.createElement("div");
+    depLine.className = "output-line";
+    depLine.textContent = "  Depends            :  " + field(pkg, "Depends");
+    main.appendChild(depLine);
+
+    const descLabel = document.createElement("div");
+    descLabel.className = "section-title";
+    descLabel.textContent = "Description";
+    main.appendChild(descLabel);
+
+    const summaryWrap = document.createElement("div");
+    summaryWrap.className = "desc-list";
+    const first = document.createElement("div");
+    first.className = "desc-line";
+    first.textContent = summary.textContent;
+    summaryWrap.appendChild(first);
 
     if (lines.length > 1) {
-      const list = document.createElement("ul");
-      list.className = "feature-list";
       lines.slice(1).forEach((line) => {
-        const item = document.createElement("li");
+        const item = document.createElement("div");
+        item.className = "desc-line";
         item.textContent = line;
-        list.appendChild(item);
+        summaryWrap.appendChild(item);
       });
-      main.appendChild(list);
     }
+    main.appendChild(summaryWrap);
 
     const actions = document.createElement("div");
     actions.className = "depiction-actions";
@@ -74,9 +113,15 @@
       const download = document.createElement("a");
       download.className = "button soft";
       download.href = new URL(pkg.Filename, repoUrl).href;
-      download.textContent = "Download";
+      download.textContent = "Download DEB";
       actions.appendChild(download);
     }
+
+    const back = document.createElement("a");
+    back.className = "button soft";
+    back.href = "../";
+    back.textContent = "Back Home";
+    actions.appendChild(back);
 
     main.appendChild(actions);
 

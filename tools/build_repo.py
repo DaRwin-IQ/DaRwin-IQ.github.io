@@ -116,7 +116,7 @@ def normalize_fields(root: Path, deb: Path, fields: dict, config: dict) -> dict:
     base_url = repo_url(config)
     package_id = out.get("Package", "")
     if config.get("add_default_depictions", True) and base_url and package_id:
-        out.setdefault("Depiction", f"{base_url}depictions/?package={package_id}")
+        out.setdefault("Depiction", f"{base_url}depictions/?package={package_id}&v=7")
     if base_url and package_id:
         package_icon = find_package_icon(root, package_id)
         out.setdefault("Icon", f"{base_url}{package_icon or 'CydiaIcon.png'}")

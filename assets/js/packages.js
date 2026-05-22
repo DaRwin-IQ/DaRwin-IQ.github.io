@@ -32,7 +32,9 @@
   function depictionUrl(pkg) {
     if (pkg.Depiction) return pkg.Depiction;
     const root = window.RepoConfig && window.RepoConfig.resolvedUrl ? window.RepoConfig.resolvedUrl : "./";
-    return new URL("depictions/?package=" + encodeURIComponent(pkg.Package || ""), root).href;
+    const url = new URL("depictions/?package=" + encodeURIComponent(pkg.Package || ""), root);
+    url.searchParams.set("v", "7");
+    return url.href;
   }
 
   function renderPackage(pkg) {
