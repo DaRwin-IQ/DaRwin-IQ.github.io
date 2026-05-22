@@ -1,0 +1,27 @@
+{
+  "name": "DaRwin-iQ",
+  "identifier": "iq.darwin.repo",
+  "description": "A polished iOS jailbreak package source for Sileo, Zebra, and Cydia.",
+  "url": "https://darwin-iq.github.io/",
+  "suite": "stable",
+  "codename": "iphoneos",
+  "version": "1.0",
+  "architectures": [
+    "iphoneos-arm",
+    "iphoneos-arm64"
+  ],
+  "components": [
+    "main"
+  ],
+  "maintainer": {
+    "name": "DaRwin iQ",
+    "email": "lldrwll@gmail.com"
+  },
+  "default_section": "Tweaks",
+  "add_default_depictions": true,
+  "links": {
+    "sileo": true,
+    "zebra": true,
+    "cydia": true
+  }
+}

@@ -1,0 +1,86 @@
+(function () {
+  function parsePackages(text) {
+    if (window.RepoPackageParser) return window.RepoPackageParser.parsePackages(text);
+    return [];
+  }
+
+  function field(pkg, key, fallback) {
+    return pkg[key] || fallback || "Not set";
+  }
+
+  function descriptionLines(pkg) {
+    return (pkg.Description || "No package description is available yet.")
+      .split(/\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+  }
+
+  function render(pkg) {
+    const main = document.getElementById("depiction-main");
+    const meta = document.getElementById("depiction-meta");
+    if (!main || !meta) return;
+
+    const title = field(pkg, "Name", field(pkg, "Package", "Package"));
+    const lines = descriptionLines(pkg);
+    main.innerHTML = "";
+
+    const label = document.createElement("p");
+    label.className = "section-label";
+    label.textContent = field(pkg, "Section", "Package");
+
+    const h1 = document.createElement("h1");
+    h1.textContent = title;
+
+    const summary = document.createElement("p");
+    summary.textContent = lines[0];
+
+    main.append(label, h1, summary);
+
+    if (lines.length > 1) {
+      const list = document.createElement("ul");
+      list.className = "feature-list";
+      lines.slice(1).forEach((line) => {
+        const item = document.createElement("li");
+        item.textContent = line;
+        list.appendChild(item);
+      });
+      main.appendChild(list);
+    }
+
+    const rows = [
+      ["Identifier", field(pkg, "Package")],
+      ["Version", field(pkg, "Version")],
+      ["Architecture", field(pkg, "Architecture")],
+      ["Maintainer", field(pkg, "Maintainer")],
+      ["Filename", field(pkg, "Filename")]
+    ];
+
+    meta.innerHTML = "";
+    rows.forEach(([key, value]) => {
+      const row = document.createElement("div");
+      const dt = document.createElement("dt");
+      const dd = document.createElement("dd");
+      dt.textContent = key;
+      dd.textContent = value;
+      row.append(dt, dd);
+      meta.appendChild(row);
+    });
+  }
+
+  async function init() {
+    const packageId = new URLSearchParams(window.location.search).get("package");
+    if (!packageId) return;
+    const root = window.RepoSite ? window.RepoSite.repoRoot() : "../";
+    try {
+      const response = await fetch(new URL("Packages", root).href, { cache: "no-store" });
+      if (!response.ok) throw new Error("Packages unavailable");
+      const packages = parsePackages(await response.text());
+      const pkg = packages.find((item) => item.Package === packageId);
+      if (pkg) render(pkg);
+    } catch (error) {
+      return;
+    }
+  }
+
+  init();
+})();

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10211c">
+  <meta name="description" content="DaRwin-iQ is an iOS jailbreak package source for Sileo, Zebra, and Cydia.">
+  <meta property="og:title" content="DaRwin-iQ Source">
+  <meta property="og:description" content="A polished iOS package source for Sileo, Zebra, and Cydia.">
+  <meta property="og:image" content="assets/images/repo-banner.png">
+  <meta property="og:type" content="website">
+  <title>DaRwin-iQ Source</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="CydiaIcon.png">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="home">
+  <nav class="topbar" aria-label="Primary">
+    <a class="brand" href="./" aria-label="DaRwin-iQ home">
+      <img src="assets/images/logo.svg" alt="" width="34" height="34">
+      <span>DaRwin-iQ</span>
+    </a>
+    <div class="nav-links">
+      <a href="#packages">Packages</a>
+      <a href="depictions/">Depictions</a>
+      <a href="Release">Release</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">iOS Package Source</p>
+      <h1>DaRwin-iQ</h1>
+      <p class="hero-copy">A clean source for jailbreak packages, depictions, and update metadata built for Sileo, Zebra, and Cydia.</p>
+      <div class="action-row" aria-label="Add source">
+        <a class="button primary" href="#" data-add-source="sileo">Add to Sileo</a>
+        <a class="button" href="#" data-add-source="zebra">Zebra</a>
+        <a class="button" href="#" data-add-source="cydia">Cydia</a>
+      </div>
+      <dl class="hero-stats" aria-label="Repository status">
+        <div>
+          <dt>Packages</dt>
+          <dd data-package-count>0</dd>
+        </div>
+        <div>
+          <dt>Suite</dt>
+          <dd data-repo-suite>stable</dd>
+        </div>
+        <div>
+          <dt>Updated</dt>
+          <dd data-repo-updated>Ready</dd>
+        </div>
+      </dl>
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro-band" aria-labelledby="source-title">
+      <div class="section-inner two-column">
+        <div>
+          <p class="section-label">Source URL</p>
+          <h2 id="source-title">Use the public URL after publishing.</h2>
+        </div>
+        <div class="copy-panel">
+          <code id="repo-url">Set repo.json url before release</code>
+          <button class="icon-button" type="button" data-copy-repo aria-label="Copy source URL" title="Copy source URL">
+            <span aria-hidden="true">Copy</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section packages-band" id="packages" aria-labelledby="packages-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Catalog</p>
+            <h2 id="packages-title">Packages</h2>
+          </div>
+          <a class="text-link" href="Packages">Raw index</a>
+        </div>
+        <div class="package-grid" id="package-grid" aria-live="polite">
+          <article class="empty-state">
+            <h3>No packages yet</h3>
+            <p>Add `.deb` files to `debs/`, then run `./build-repo.sh` to publish the package index.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section workflow-band" aria-labelledby="workflow-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Build Flow</p>
+            <h2 id="workflow-title">Prepared for real packages.</h2>
+          </div>
+        </div>
+        <div class="step-grid">
+          <article>
+            <span class="step-number">01</span>
+            <h3>Drop packages</h3>
+            <p>Place signed or unsigned `.deb` files inside `debs/`.</p>
+          </article>
+          <article>
+            <span class="step-number">02</span>
+            <h3>Build indexes</h3>
+            <p>Run `./build-repo.sh` to refresh `Packages`, compressed indexes, and `Release` checksums.</p>
+          </article>
+          <article>
+            <span class="step-number">03</span>
+            <h3>Publish</h3>
+            <p>Push the folder to GitHub Pages or any static host that serves files without rewriting paths.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-inner footer-inner">
+      <span>DaRwin-iQ</span>
+      <span>APT source for iOS package managers</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/packages.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+Package: iq.darwin.example
+Name: Example Package
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: Short package summary.
+ Long package detail line for Sileo and depiction pages.
+Maintainer: DaRwin iQ <lldrwll@gmail.com>
+Author: DaRwin iQ
+Section: Tweaks
+Depends: firmware (>= 14.0)
+Homepage: https://example.com

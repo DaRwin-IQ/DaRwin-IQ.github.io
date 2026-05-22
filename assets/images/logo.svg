@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">DaRwin-iQ logo</title>
+  <desc id="desc">Geometric monogram for the DaRwin-iQ package source.</desc>
+  <rect width="512" height="512" rx="92" fill="#10211c"/>
+  <path d="M92 118h134c104 0 178 62 178 138s-74 138-178 138H92V118Zm74 70v136h57c62 0 103-27 103-68s-41-68-103-68h-57Z" fill="#f6efe2"/>
+  <path d="M329 356c24-21 38-56 38-100 0-47-17-84-45-106h70c28 25 44 62 44 106 0 43-16 80-44 100h-63Z" fill="#0f7d67"/>
+  <path d="M376 386l46 46h-78l-31-31c22-2 43-7 63-15Z" fill="#c87534"/>
+</svg>

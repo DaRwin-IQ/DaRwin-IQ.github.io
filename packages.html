@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10211c">
+  <title>Packages - DaRwin-iQ</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="packages">
+  <nav class="topbar" aria-label="Primary">
+    <a class="brand" href="./" aria-label="DaRwin-iQ home">
+      <img src="assets/images/logo.svg" alt="" width="34" height="34">
+      <span>DaRwin-iQ</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="depictions/">Depictions</a>
+      <a href="Release">Release</a>
+    </div>
+  </nav>
+
+  <main class="subpage">
+    <section class="section packages-band" aria-labelledby="packages-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Catalog</p>
+            <h1 id="packages-title">Packages</h1>
+          </div>
+          <a class="text-link" href="Packages">Raw index</a>
+        </div>
+        <div class="toolbar">
+          <label class="search-box">
+            <span>Search</span>
+            <input type="search" id="package-search" placeholder="Package, section, maintainer">
+          </label>
+          <select id="section-filter" aria-label="Filter by section">
+            <option value="">All sections</option>
+          </select>
+        </div>
+        <div class="package-grid" id="package-grid" aria-live="polite">
+          <article class="empty-state">
+            <h3>No packages yet</h3>
+            <p>Add `.deb` files to `debs/`, then run `./build-repo.sh`.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/packages.js" defer></script>
+</body>
+</html>
