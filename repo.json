@@ -1,7 +1,7 @@
 {
   "name": "DaRwin-iQ",
   "identifier": "iq.darwin.repo",
-  "description": "A polished iOS jailbreak package source for Sileo, Zebra, and Cydia.",
+  "description": "An advanced iOS jailbreak package source featuring auto tapping, touch recording, OCR-driven actions, and app-specific automation for Sileo, Zebra, and Cydia.",
   "url": "https://darwin-iq.github.io/",
   "suite": "stable",
   "codename": "iphoneos",
