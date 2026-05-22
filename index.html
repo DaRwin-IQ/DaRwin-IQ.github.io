@@ -1,137 +1,917 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080d0c">
-  <meta name="description" content="DaRwin-iQ source for AUTO CLICKER / TOUCH and upcoming iOS jailbreak tools.">
-  <meta http-equiv="Cache-Control" content="no-cache">
-  <meta property="og:title" content="DaRwin-iQ Source">
-  <meta property="og:description" content="Add the DaRwin-iQ source to Sileo, Zebra, or Cydia.">
-  <meta property="og:image" content="assets/images/repo-banner.png">
-  <meta property="og:type" content="website">
-  <title>DaRwin-iQ Source</title>
-  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="CydiaIcon.png">
-  <link rel="stylesheet" href="assets/css/site.css?v=5">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DaRwin-iQ — Source</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black:   #0a0a0a;
+      --black2:  #111111;
+      --black3:  #161616;
+      --black4:  #1c1c1c;
+      --gray1:   #222222;
+      --gray2:   #2e2e2e;
+      --gray3:   #3a3a3a;
+      --gray4:   #555555;
+      --gray5:   #777777;
+      --gray6:   #999999;
+      --silver:  #b0b0b0;
+      --white:   #e8e8e8;
+      --white2:  #f0f0f0;
+      --pure:    #ffffff;
+      --accent:  #d0d0d0;
+      --green:   #4caf50;
+      --dim:     rgba(255,255,255,0.04);
+      --border:  rgba(255,255,255,0.07);
+      --border2: rgba(255,255,255,0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'JetBrains Mono', monospace;
+      min-height: 100vh;
+      overflow-x: hidden;
+      cursor: default;
+    }
+
+    /* ── SCANLINE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.08) 2px,
+        rgba(0,0,0,0.08) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── NOISE TEXTURE ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.5;
+    }
+
+    /* ────────────────── TOP BAR ────────────────── */
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 42px;
+      background: var(--black2);
+      border-bottom: 1px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+    }
+    .dot-red    { background: #ff5f57; box-shadow: 0 0 6px #ff5f5766; }
+    .dot-yellow { background: #ffbd2e; box-shadow: 0 0 6px #ffbd2e66; }
+    .dot-green  { background: #28c840; box-shadow: 0 0 6px #28c84066; }
+
+    .topbar-title {
+      font-size: 11px;
+      color: var(--gray5);
+      letter-spacing: 0.08em;
+      margin-left: 16px;
+    }
+
+    .topbar-right {
+      font-size: 10px;
+      color: var(--gray4);
+      letter-spacing: 0.1em;
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      margin-right: 6px;
+      animation: blink 2s infinite;
+      box-shadow: 0 0 6px var(--green);
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* ────────────────── HERO ────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px 60px;
+      position: relative;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
+    }
+
+    .terminal-window {
+      width: 100%;
+      max-width: 760px;
+      background: var(--black2);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04),
+        0 40px 120px rgba(0,0,0,0.8),
+        0 0 80px rgba(255,255,255,0.02);
+      position: relative;
+      z-index: 1;
+    }
+
+    .terminal-header {
+      background: var(--black3);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .terminal-tab {
+      font-size: 11px;
+      color: var(--gray5);
+      margin-left: 12px;
+      letter-spacing: 0.06em;
+    }
+
+    .terminal-body {
+      padding: 32px 28px 36px;
+      line-height: 1.8;
+    }
+
+    .prompt {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+
+    .prompt-user {
+      color: var(--silver);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .prompt-arrow {
+      color: var(--gray4);
+      font-size: 13px;
+    }
+
+    .prompt-cmd {
+      color: var(--white2);
+      font-size: 13px;
+      flex: 1;
+    }
+
+    .output-line {
+      padding-left: 0;
+      font-size: 13px;
+      color: var(--gray6);
+      margin-bottom: 2px;
+    }
+
+    .output-line.highlight {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .output-line.dim { color: var(--gray4); }
+
+    /* ── LOGO ASCII ── */
+    .ascii-logo {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(8px, 1.6vw, 13px);
+      line-height: 1.25;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      margin: 20px 0 28px;
+      white-space: pre;
+      text-shadow: 0 0 20px rgba(255,255,255,0.15);
+    }
+
+    .spacer { height: 14px; }
+    .spacer-sm { height: 8px; }
+
+    /* ── TYPING CURSOR ── */
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      background: var(--white);
+      margin-left: 2px;
+      vertical-align: middle;
+      animation: cursor-blink 1s step-end infinite;
+    }
+
+    @keyframes cursor-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* ── ADD BUTTONS ── */
+    .add-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .add-btn {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      background: transparent;
+      border: 1px solid var(--gray3);
+      border-radius: 6px;
+      padding: 0;
+      cursor: pointer;
+      text-decoration: none;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .add-btn:hover {
+      border-color: var(--silver);
+      box-shadow: 0 0 20px rgba(255,255,255,0.06);
+      transform: translateY(-1px);
+    }
+
+    .add-btn:active { transform: translateY(0); }
+
+    .btn-prefix {
+      background: var(--gray1);
+      padding: 12px 14px;
+      font-size: 12px;
+      color: var(--gray5);
+      border-right: 1px solid var(--gray3);
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .add-btn:hover .btn-prefix { background: var(--gray2); }
+
+    .btn-label {
+      padding: 12px 18px;
+      font-size: 12px;
+      color: var(--white);
+      letter-spacing: 0.06em;
+      flex: 1;
+    }
+
+    .btn-icon {
+      padding: 12px 14px;
+      font-size: 14px;
+      color: var(--gray5);
+      transition: color 0.2s;
+    }
+
+    .add-btn:hover .btn-icon { color: var(--white); }
+
+    /* ── SILEO specific color ── */
+    .btn-sileo .btn-prefix { color: #a0c4ff; }
+    .btn-zebra .btn-prefix  { color: #ffe0a0; }
+    .btn-cydia .btn-prefix  { color: #c0ffc0; }
+
+    /* ────────────────── STATS BAR ────────────────── */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 28px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-top: 40px;
+      background: var(--dim);
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: var(--gray5);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ────────────────── SECTION ────────────────── */
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .section-cmd {
+      font-size: 11px;
+      color: var(--gray5);
+      letter-spacing: 0.1em;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, var(--border2), transparent);
+      flex: 1;
+    }
+
+    /* ────────────────── TWEAKS GRID ────────────────── */
+    .tweaks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .tweak-card {
+      background: var(--black2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tweak-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tweak-card:hover {
+      border-color: var(--gray3);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+      transform: translateY(-2px);
+    }
+
+    .tweak-card:hover::before { opacity: 1; }
+
+    .tweak-id {
+      font-size: 10px;
+      color: var(--gray4);
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+
+    .tweak-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .tweak-desc {
+      font-size: 11px;
+      color: var(--gray6);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .tweak-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .tweak-version {
+      font-size: 10px;
+      color: var(--gray4);
+      background: var(--gray1);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .tweak-price {
+      font-size: 12px;
+      color: var(--silver);
+      font-weight: 600;
+    }
+
+    .tweak-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .tweak-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 11px;
+      border: 1px solid var(--gray3);
+      border-radius: 5px;
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .tweak-link:hover {
+      border-color: var(--silver);
+      background: var(--gray1);
+    }
+
+    /* ────────────────── HOW TO ADD ────────────────── */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      background: var(--black2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .step-num {
+      background: var(--gray1);
+      border-right: 1px solid var(--border);
+      padding: 16px 18px;
+      font-size: 12px;
+      color: var(--gray5);
+      min-width: 52px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .step-content {
+      padding: 16px 20px;
+      flex: 1;
+    }
+
+    .step-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 11px;
+      color: var(--gray6);
+      line-height: 1.7;
+    }
+
+    .step-url {
+      font-size: 11px;
+      color: var(--silver);
+      background: var(--gray1);
+      padding: 6px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      display: inline-block;
+      letter-spacing: 0.03em;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.2s;
+      word-break: break-all;
+    }
+
+    .step-url:hover { background: var(--gray2); }
+
+    .copy-hint {
+      font-size: 9px;
+      color: var(--gray4);
+      margin-left: 8px;
+    }
+
+    /* ────────────────── FOOTER ────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-terminal {
+      font-size: 11px;
+      color: var(--gray4);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gray5);
+      letter-spacing: 0.15em;
+    }
+
+    .footer-copy {
+      font-size: 10px;
+      color: var(--gray4);
+      text-align: center;
+      letter-spacing: 0.06em;
+    }
+
+    /* ────────────────── COPY TOAST ────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--gray1);
+      border: 1px solid var(--border2);
+      color: var(--white);
+      font-size: 12px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 9000;
+      letter-spacing: 0.05em;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ────────────────── FADE IN ANIMATION ────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.25s; }
+    .delay-3 { animation-delay: 0.4s; }
+    .delay-4 { animation-delay: 0.55s; }
+    .delay-5 { animation-delay: 0.7s; }
+    .delay-6 { animation-delay: 0.85s; }
+
+    /* ────────────────── RESPONSIVE ────────────────── */
+    @media (max-width: 600px) {
+      .topbar { padding: 0 14px; }
+      .terminal-body { padding: 20px 16px 24px; }
+      .ascii-logo { font-size: 7px; }
+      .stats-bar { gap: 24px; }
+      .add-buttons { gap: 8px; }
+      .tweaks-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 16px; }
+    }
+  </style>
 </head>
-<body data-page="home">
-  <nav class="topbar" aria-label="Primary">
-    <a class="brand" href="./" aria-label="DaRwin-iQ home">
-      <img src="assets/images/logo.svg" alt="" width="36" height="36">
-      <span>DaRwin-iQ</span>
-    </a>
-    <div class="nav-links">
-      <a href="#packages">Packages</a>
-      <a href="#source">URL</a>
-      <a class="nav-cta" href="sileo://source/https://darwin-iq.github.io/" data-add-source="sileo">Sileo</a>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+      <span class="topbar-title">darwin-iq — source — 80×24</span>
     </div>
-  </nav>
-
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="hero-copy-block">
-        <p class="eyebrow">Rootless Jailbreak Source</p>
-        <h1>DaRwin-iQ</h1>
-        <p class="hero-copy">Add the official DaRwin-iQ source to install AUTO CLICKER / TOUCH and future jailbreak tools directly from your package manager.</p>
-        <div class="action-row hero-actions" aria-label="Add source">
-          <a class="button primary" href="sileo://source/https://darwin-iq.github.io/" data-add-source="sileo">Add to Sileo</a>
-          <a class="button glass" href="zbra://sources/add/https://darwin-iq.github.io/" data-add-source="zebra">Zebra</a>
-          <a class="button glass" href="cydia://url/https://cydia.saurik.com/api/share#?source=https%3A%2F%2Fdarwin-iq.github.io%2F" data-add-source="cydia">Cydia</a>
-        </div>
-      </div>
-
-      <aside class="source-panel" aria-label="Repository summary">
-        <div class="source-panel-top">
-          <img src="assets/images/logo.svg" alt="" width="54" height="54">
-          <div>
-            <span class="panel-label">Official Source</span>
-            <strong>https://darwin-iq.github.io/</strong>
-          </div>
-        </div>
-        <div class="source-url-pill">
-          <code>https://darwin-iq.github.io/</code>
-        </div>
-        <div class="source-panel-grid">
-          <div>
-            <span>Package</span>
-            <strong data-package-count>1</strong>
-          </div>
-          <div>
-            <span>Manager</span>
-            <strong>Sileo</strong>
-          </div>
-        </div>
-      </aside>
+    <div class="topbar-right">
+      <span class="status-dot"></span>ONLINE
     </div>
-  </header>
+  </div>
 
-  <main>
-    <section class="section spotlight-band" aria-labelledby="spotlight-title">
-      <div class="section-inner spotlight-layout">
-        <div class="spotlight-media">
-          <img src="assets/package-icons/com.darwiniq.autoclicker.png" alt="AUTO CLICKER / TOUCH icon" width="188" height="188">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-grid"></div>
+
+    <div class="terminal-window fade-in delay-1">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
         </div>
-        <div class="spotlight-content">
-          <p class="section-label">Latest Package</p>
-          <h2 id="spotlight-title">AUTO CLICKER / TOUCH</h2>
-          <p class="section-copy">A touch and click automation tweak with a companion app target selector for supported jailbreak devices.</p>
-          <div class="mini-meta" aria-label="Package metadata">
-            <span>1.0.0</span>
-            <span>iOS 15+</span>
-            <span>iphoneos-arm64</span>
-            <span>com.darwiniq.autoclicker</span>
-          </div>
-          <div class="action-row compact">
-            <a class="button dark" href="depictions/?package=com.darwiniq.autoclicker">Package Details</a>
-            <a class="button soft" href="debs/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb">Download DEB</a>
-          </div>
+        <span class="terminal-tab">~/DaRwin-iQ — zsh</span>
+      </div>
+
+      <div class="terminal-body">
+        <div class="prompt">
+          <span class="prompt-user">darwin@iq</span>
+          <span class="prompt-arrow">~</span>
+          <span class="prompt-arrow">❯</span>
+          <span class="prompt-cmd">cat /etc/repo/info</span>
+        </div>
+
+        <div class="spacer-sm"></div>
+
+        <div class="ascii-logo" id="ascii-logo">
+ ____       ____          _         ___ ___  
+|  _ \  __ |  _ \__      (_)_ __   |_ _/ _ \ 
+| | | |/ _` | |_) \ \ /\ / / '_ \  | | | | |
+| |_| | (_| |  _ < \ V  V /| | | | | | |_| |
+|____/ \__,_|_| \_\ \_/\_/ |_| |_||___\__\_\</div>
+
+        <div class="output-line dim">──────────────────────────────────────────────</div>
+        <div class="spacer-sm"></div>
+        <div class="output-line highlight">  Repository Name    :  DaRwin-iQ</div>
+        <div class="output-line">  Repository URL     :  https://darwin-iq.github.io/</div>
+        <div class="output-line">  Latest Package     :  AUTO CLICKER / TOUCH</div>
+        <div class="output-line">  Architecture       :  iphoneos-arm64</div>
+        <div class="output-line">  Supported PM       :  Sileo · Zebra · Cydia</div>
+        <div class="output-line dim">──────────────────────────────────────────────</div>
+        <div class="spacer-sm"></div>
+
+        <div class="prompt fade-in delay-3">
+          <span class="prompt-user">darwin@iq</span>
+          <span class="prompt-arrow">~</span>
+          <span class="prompt-arrow">❯</span>
+          <span class="prompt-cmd">./add-repo --interactive<span class="cursor"></span></span>
+        </div>
+
+        <div class="add-buttons fade-in delay-4">
+          <a class="add-btn btn-sileo"
+             href="sileo://source/https://darwin-iq.github.io/"
+             onclick="tryOpen(event,'sileo://source/https://darwin-iq.github.io/')">
+            <span class="btn-prefix">$ pm add --sileo</span>
+            <span class="btn-label">Add to Sileo</span>
+            <span class="btn-icon">→</span>
+          </a>
+          <a class="add-btn btn-zebra"
+             href="zbra://sources/add/https://darwin-iq.github.io/"
+             onclick="tryOpen(event,'zbra://sources/add/https://darwin-iq.github.io/')">
+            <span class="btn-prefix">$ pm add --zebra</span>
+            <span class="btn-label">Add to Zebra</span>
+            <span class="btn-icon">→</span>
+          </a>
+          <a class="add-btn btn-cydia"
+             href="cydia://url/https://cydia.saurik.com/api/share#?source=https%3A%2F%2Fdarwin-iq.github.io%2F"
+             onclick="tryOpen(event,'cydia://url/https://cydia.saurik.com/api/share#?source=https%3A%2F%2Fdarwin-iq.github.io%2F')">
+            <span class="btn-prefix">$ pm add --cydia</span>
+            <span class="btn-label">Add to Cydia</span>
+            <span class="btn-icon">→</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar fade-in delay-2">
+    <div class="stat-item">
+      <div class="stat-value" id="cnt-pkgs">—</div>
+      <div class="stat-label">Packages</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">ARM64</div>
+      <div class="stat-label">Architecture</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">iOS 15+</div>
+      <div class="stat-label">Supported</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">FREE</div>
+      <div class="stat-label">Base Access</div>
+    </div>
+  </div>
+
+  <!-- PACKAGES SECTION -->
+  <section id="packages">
+    <div class="section-header fade-in">
+      <span class="section-cmd">$ ls -la ./packages/autoclicker/</span>
+      <div class="divider"></div>
+    </div>
+
+    <div class="tweaks-grid" id="tweaks-grid">
+      <!-- injected by JS -->
+    </div>
+  </section>
+
+  <!-- HOW TO ADD -->
+  <section id="howto" style="padding-top:0;">
+    <div class="section-header fade-in">
+      <span class="section-cmd">$ man add-repo</span>
+      <div class="divider"></div>
+    </div>
+
+    <div class="steps-list fade-in delay-2">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <div class="step-title">Open your Package Manager</div>
+          <div class="step-desc">Launch Sileo, Zebra, or Cydia on your jailbroken device. Navigate to the <strong>Sources</strong> tab.</div>
         </div>
       </div>
-    </section>
-
-    <section class="section source-band" id="source" aria-labelledby="source-title">
-      <div class="section-inner source-layout">
-        <div>
-          <p class="section-label">Copy Source</p>
-          <h2 id="source-title">https://darwin-iq.github.io/</h2>
-        </div>
-        <div class="copy-panel">
-          <code id="repo-url">https://darwin-iq.github.io/</code>
-          <button class="icon-button" type="button" data-copy-repo aria-label="Copy source URL" title="Copy source URL">Copy</button>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <div class="step-title">Tap "Edit" → "Add"</div>
+          <div class="step-desc">Press the Edit button (top right), then tap the + / Add button to enter a new repository URL.</div>
         </div>
       </div>
-    </section>
-
-    <section class="section packages-band" id="packages" aria-labelledby="packages-title">
-      <div class="section-inner">
-        <div class="section-heading">
-          <div>
-            <p class="section-label">Catalog</p>
-            <h2 id="packages-title">Packages</h2>
-          </div>
-          <a class="button dark slim" href="packages.html">View All</a>
-        </div>
-        <div class="package-grid" id="package-grid" aria-live="polite">
-          <article class="empty-state">
-            <h3>Loading catalog</h3>
-            <p>Fetching the latest package index.</p>
-          </article>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <div class="step-title">Enter the Repository URL</div>
+          <div class="step-desc">Paste the URL below and confirm.</div>
+          <span class="step-url" onclick="copyURL(this)">
+            https://darwin-iq.github.io/
+            <span class="copy-hint">[tap to copy]</span>
+          </span>
         </div>
       </div>
-    </section>
-  </main>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <div class="step-title">Refresh & Browse</div>
+          <div class="step-desc">Wait for the repo to refresh. AUTO CLICKER / TOUCH will appear in your package manager.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <a class="mobile-sileo" href="sileo://source/https://darwin-iq.github.io/" data-add-source="sileo">Add to Sileo</a>
-
-  <footer class="site-footer">
-    <div class="section-inner footer-inner">
-      <span>DaRwin-iQ</span>
-      <span data-repo-updated>Live source</span>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-terminal">
+      <span class="prompt-user">darwin@iq</span>
+      <span style="color:var(--gray4)"> ~ </span>
+      <span class="prompt-arrow">❯</span>
+      <span style="color:var(--gray6); margin-left:8px;">exit 0</span>
+    </div>
+    <div class="footer-name">DaRwin-iQ</div>
+    <div class="footer-copy">
+      © 2026 DaRwin-iQ Repository · Built for the jailbreak community<br/>
+      <span style="color:var(--gray4)">https://darwin-iq.github.io/</span>
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=5" defer></script>
-  <script src="assets/js/packages.js?v=5" defer></script>
+  <div class="toast" id="toast">URL copied to clipboard ✓</div>
+
+  <script>
+    /* ── PACKAGES DATA ── */
+    const packages = [
+      {
+        id: 'com.darwiniq.autoclicker',
+        name: 'AUTO CLICKER / TOUCH',
+        desc: 'AUTO TOUCH/CLICK mod menu with companion app target selector for supported jailbreak devices.',
+        version: '1.0.0',
+        price: 'Free',
+        details: 'depictions/?package=com.darwiniq.autoclicker',
+        download: 'debs/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb'
+      },
+    ];
+
+    /* ── RENDER PACKAGES ── */
+    const grid = document.getElementById('tweaks-grid');
+    document.getElementById('cnt-pkgs').textContent = packages.length;
+
+    packages.forEach((pkg, i) => {
+      const card = document.createElement('div');
+      card.className = 'tweak-card fade-in';
+      card.style.animationDelay = `${0.1 + i * 0.12}s`;
+      card.innerHTML = `
+        <div class="tweak-id"># ${pkg.id}</div>
+        <div class="tweak-name">${pkg.name}</div>
+        <div class="tweak-desc">${pkg.desc}</div>
+        <div class="tweak-footer">
+          <span class="tweak-version">v${pkg.version}</span>
+          <span class="tweak-price">${pkg.price}</span>
+        </div>
+        <div class="tweak-actions">
+          <a class="tweak-link" href="${pkg.details}">Details</a>
+          <a class="tweak-link" href="${pkg.download}">Download</a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    /* ── COPY URL ── */
+    function copyURL(el) {
+      const url = 'https://darwin-iq.github.io/';
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = url;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      showToast('URL copied to clipboard ✓');
+    }
+
+    /* ── DEEP LINK HANDLER ── */
+    function tryOpen(e, url) {
+      e.preventDefault();
+      window.location.href = url;
+    }
+
+    /* ── TOAST ── */
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    /* ── INTERSECTION OBSERVER for scroll fade ── */
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.tweak-card, .step').forEach(el => {
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      obs.observe(el);
+    });
+  </script>
 </body>
 </html>
