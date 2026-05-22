@@ -9,6 +9,7 @@ Professional Sileo/APT source scaffold for iOS jailbreak packages.
 - `Release` contains repo metadata and checksums.
 - `depictions/` contains the web depiction page.
 - `assets/` contains the site design, scripts, and images.
+- `assets/package-icons/` stores optional per-package icons named by package id.
 - `repo.json` controls public metadata.
 - `tools/` contains build and validation scripts.
 
@@ -40,6 +41,12 @@ The URL must end up pointing to the folder that contains `Release` and
 
 The builder reads package metadata with `dpkg-deb -f`, adds file checksums, and
 refreshes the compressed package indexes.
+
+To use a custom icon, add a PNG named after the package id:
+
+```text
+assets/package-icons/com.example.package.png
+```
 
 ## GitHub Pages
 

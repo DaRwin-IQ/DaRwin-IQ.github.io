@@ -39,8 +39,18 @@
     const article = document.createElement("article");
     article.className = "package-card";
 
+    const header = document.createElement("div");
+    header.className = "package-card-header";
+
+    const icon = document.createElement("img");
+    icon.className = "package-icon";
+    icon.src = pkg.Icon || "CydiaIcon.png";
+    icon.alt = "";
+    icon.loading = "lazy";
+
     const title = document.createElement("h3");
     title.textContent = packageTitle(pkg);
+    header.append(icon, title);
 
     const description = document.createElement("p");
     description.textContent = describe(pkg);
@@ -69,7 +79,7 @@
       actions.appendChild(download);
     }
 
-    article.append(title, description, meta, actions);
+    article.append(header, description, meta, actions);
     return article;
   }
 

@@ -1,0 +1,19 @@
+Package: com.darwiniq.autoclicker
+Name: AUTO CLICKER / TOUCH
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Maintainer: DarwinIQ
+Author: DarwinIQ
+Section: Tweaks
+Priority: optional
+Depends: firmware (>= 15.0), ellekit | mobilesubstrate
+Description: AUTO TOUCH/CLICK mod menu with companion app target selector
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker
+Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.png
+Filename: debs/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb
+Size: 1233318
+MD5sum: 9b068ef32b2a0a17445ec4dc1aa95c0e
+SHA1: bc5f5a9c30e0007bae15208588348bbd7370e46e
+SHA256: 794206e11e0ac3388037ca624a22705581118d16781549b6b047e0f81a356aa3
+Installed-Size: 1464
+

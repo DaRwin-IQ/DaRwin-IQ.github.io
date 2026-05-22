@@ -24,6 +24,16 @@
     const lines = descriptionLines(pkg);
     main.innerHTML = "";
 
+    const hero = document.createElement("div");
+    hero.className = "depiction-hero";
+
+    const icon = document.createElement("img");
+    icon.className = "depiction-icon";
+    icon.src = pkg.Icon || "../CydiaIcon.png";
+    icon.alt = "";
+
+    const heading = document.createElement("div");
+
     const label = document.createElement("p");
     label.className = "section-label";
     label.textContent = field(pkg, "Section", "Package");
@@ -34,7 +44,9 @@
     const summary = document.createElement("p");
     summary.textContent = lines[0];
 
-    main.append(label, h1, summary);
+    heading.append(label, h1);
+    hero.append(icon, heading);
+    main.append(hero, summary);
 
     if (lines.length > 1) {
       const list = document.createElement("ul");

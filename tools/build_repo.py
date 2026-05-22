@@ -92,6 +92,17 @@ def repo_url(config: dict) -> str:
     return url if url.endswith("/") else url + "/"
 
 
+def find_package_icon(root: Path, package_id: str) -> str:
+    if not package_id:
+        return ""
+    icon_dir = root / "assets" / "package-icons"
+    for suffix in (".png", ".jpg", ".jpeg", ".webp"):
+        candidate = icon_dir / f"{package_id}{suffix}"
+        if candidate.exists():
+            return candidate.relative_to(root).as_posix()
+    return ""
+
+
 def normalize_fields(root: Path, deb: Path, fields: dict, config: dict) -> dict:
     out = dict(fields)
     out.setdefault("Section", config.get("default_section", "Tweaks"))
@@ -107,7 +118,8 @@ def normalize_fields(root: Path, deb: Path, fields: dict, config: dict) -> dict:
     if config.get("add_default_depictions", True) and base_url and package_id:
         out.setdefault("Depiction", f"{base_url}depictions/?package={package_id}")
     if base_url and package_id:
-        out.setdefault("Icon", f"{base_url}CydiaIcon.png")
+        package_icon = find_package_icon(root, package_id)
+        out.setdefault("Icon", f"{base_url}{package_icon or 'CydiaIcon.png'}")
 
     required = ["Package", "Version", "Architecture", "Maintainer", "Description"]
     missing = [key for key in required if not out.get(key)]

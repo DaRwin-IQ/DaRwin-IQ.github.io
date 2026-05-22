@@ -324,6 +324,29 @@ code {
   gap: 14px;
 }
 
+.package-card-header,
+.depiction-hero {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.package-icon,
+.depiction-icon {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  object-fit: cover;
+}
+
+.depiction-icon {
+  width: 86px;
+  height: 86px;
+}
+
 .package-card h3,
 .empty-state h3,
 .step-grid h3,
@@ -454,7 +477,6 @@ code {
 }
 
 .depiction-main h1 {
-  margin-bottom: 12px;
   font-size: clamp(2rem, 5vw, 4.2rem);
 }
 
