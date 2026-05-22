@@ -15,6 +15,22 @@
       .filter(Boolean);
   }
 
+  function createDetail(label, value) {
+    const item = document.createElement("div");
+    item.className = "detail-item";
+
+    const dt = document.createElement("div");
+    dt.className = "detail-label";
+    dt.textContent = label;
+
+    const dd = document.createElement("div");
+    dd.className = "detail-value";
+    dd.textContent = value || "Not set";
+
+    item.append(dt, dd);
+    return item;
+  }
+
   function render(pkg) {
     const main = document.getElementById("depiction-main");
     const meta = document.getElementById("depiction-meta");
@@ -41,42 +57,31 @@
     icon.className = "depiction-icon";
     icon.src = pkg.Icon || "../CydiaIcon.png";
     icon.alt = "";
+    icon.loading = "lazy";
 
     const heading = document.createElement("div");
 
     const h1 = document.createElement("h1");
+    h1.className = "package-name";
     h1.textContent = title;
 
     const id = document.createElement("div");
     id.className = "package-id";
     id.textContent = field(pkg, "Package");
 
-    const summary = document.createElement("p");
-    summary.textContent = lines[0];
-
     heading.append(h1, id);
     hero.append(icon, heading);
     main.append(hero);
 
-    const infoLine = document.createElement("div");
-    infoLine.className = "output-line highlight";
-    infoLine.textContent = "  Latest Package     :  " + title;
-    main.appendChild(infoLine);
-
-    const repoLine = document.createElement("div");
-    repoLine.className = "output-line";
-    repoLine.textContent = "  Repository URL     :  " + repoUrl;
-    main.appendChild(repoLine);
-
-    const archLine = document.createElement("div");
-    archLine.className = "output-line";
-    archLine.textContent = "  Architecture       :  " + field(pkg, "Architecture");
-    main.appendChild(archLine);
-
-    const depLine = document.createElement("div");
-    depLine.className = "output-line";
-    depLine.textContent = "  Depends            :  " + field(pkg, "Depends");
-    main.appendChild(depLine);
+    const details = document.createElement("div");
+    details.className = "details-list";
+    details.append(
+      createDetail("Latest Package", title),
+      createDetail("Version", field(pkg, "Version")),
+      createDetail("Architecture", field(pkg, "Architecture")),
+      createDetail("Depends", field(pkg, "Depends"))
+    );
+    main.appendChild(details);
 
     const descLabel = document.createElement("div");
     descLabel.className = "section-title";
@@ -87,7 +92,7 @@
     summaryWrap.className = "desc-list";
     const first = document.createElement("div");
     first.className = "desc-line";
-    first.textContent = summary.textContent;
+    first.textContent = lines[0];
     summaryWrap.appendChild(first);
 
     if (lines.length > 1) {
@@ -101,49 +106,77 @@
     main.appendChild(summaryWrap);
 
     const actions = document.createElement("div");
-    actions.className = "depiction-actions";
+    actions.className = "action-bar";
 
     const add = document.createElement("a");
-    add.className = "button dark";
+    add.className = "add-btn";
     add.href = "sileo://source/" + repoUrl;
     add.textContent = "Add to Sileo";
     actions.appendChild(add);
 
     if (pkg.Filename) {
       const download = document.createElement("a");
-      download.className = "button soft";
+      download.className = "ghost-btn";
       download.href = new URL(pkg.Filename, repoUrl).href;
       download.textContent = "Download DEB";
       actions.appendChild(download);
     }
 
     const back = document.createElement("a");
-    back.className = "button soft";
+    back.className = "ghost-btn";
     back.href = "../";
     back.textContent = "Back Home";
     actions.appendChild(back);
 
     main.appendChild(actions);
 
+    meta.innerHTML = "";
+    const metaTitle = document.createElement("h2");
+    metaTitle.textContent = "Package metadata";
+    meta.appendChild(metaTitle);
+
+    const cards = document.createElement("div");
+
     const rows = [
       ["Identifier", field(pkg, "Package")],
+      ["Maintainer", field(pkg, "Maintainer")],
+      ["Section", field(pkg, "Section")],
       ["Version", field(pkg, "Version")],
       ["Architecture", field(pkg, "Architecture")],
-      ["Depends", field(pkg, "Depends")],
-      ["Maintainer", field(pkg, "Maintainer")],
       ["Source", repoUrl]
     ];
 
-    meta.innerHTML = "";
     rows.forEach(([key, value]) => {
-      const row = document.createElement("div");
+      const card = document.createElement("div");
+      card.className = "meta-card";
       const dt = document.createElement("dt");
       const dd = document.createElement("dd");
       dt.textContent = key;
       dd.textContent = value;
-      row.append(dt, dd);
-      meta.appendChild(row);
+      card.append(dt, dd);
+      cards.appendChild(card);
     });
+
+    meta.appendChild(cards);
+
+    const footer = document.createElement("div");
+    footer.className = "panel-footer";
+
+    const sourceLink = document.createElement("a");
+    sourceLink.className = "add-btn";
+    sourceLink.href = "sileo://source/" + repoUrl;
+    sourceLink.textContent = "Add to Sileo";
+
+    const repo = document.createElement("div");
+    repo.className = "panel-url";
+    repo.textContent = repoUrl;
+
+    const note = document.createElement("div");
+    note.className = "panel-note";
+    note.textContent = "Package details follow the same terminal layout as the source homepage.";
+
+    footer.append(sourceLink, repo, note);
+    meta.appendChild(footer);
   }
 
   async function init() {

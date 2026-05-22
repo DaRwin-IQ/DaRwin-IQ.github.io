@@ -130,14 +130,14 @@
 
     .page {
       padding: 72px 18px 40px;
-      max-width: 1220px;
+      max-width: 1160px;
       margin: 0 auto;
     }
 
     .page-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) 360px;
-      gap: 18px;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 16px;
       align-items: start;
     }
 
@@ -178,7 +178,7 @@
     }
 
     .terminal-body {
-      padding: 28px;
+      padding: 22px;
     }
 
     .prompt {
@@ -245,12 +245,23 @@
       display: flex;
       gap: 14px;
       align-items: center;
-      margin-bottom: 18px;
+      margin: 18px 0 14px;
+    }
+
+    .depiction-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 14px;
+      border: 1px solid var(--border3);
+      object-fit: cover;
+      flex: 0 0 auto;
+      background: var(--gray1);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
     }
 
     .package-icon {
-      width: 84px;
-      height: 84px;
+      width: 68px;
+      height: 68px;
       border-radius: 10px;
       border: 1px solid var(--border3);
       object-fit: cover;
@@ -259,7 +270,7 @@
     }
 
     .package-name {
-      font-size: clamp(20px, 4vw, 30px);
+      font-size: clamp(18px, 2.2vw, 26px);
       font-weight: 800;
       color: var(--white);
       line-height: 1.05;
@@ -276,14 +287,14 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
-      margin-top: 20px;
+      margin-top: 16px;
     }
 
     .detail-item {
       border: 1px solid var(--border);
       border-radius: 8px;
       background: var(--black3);
-      padding: 12px 14px;
+      padding: 10px 12px;
     }
 
     .detail-label {
@@ -317,8 +328,8 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 20px;
-      padding-top: 18px;
+      margin-top: 18px;
+      padding-top: 16px;
       border-top: 1px solid var(--border);
     }
 
@@ -355,7 +366,7 @@
     }
 
     .panel {
-      padding: 18px;
+      padding: 16px;
     }
 
     .panel h2 {
@@ -371,7 +382,7 @@
     }
 
     .meta-card {
-      padding: 14px 16px;
+      padding: 12px 14px;
       background: var(--black3);
     }
 
@@ -440,7 +451,7 @@
       }
 
       .panel {
-        order: -1;
+        order: 0;
       }
     }
 
@@ -458,7 +469,7 @@
       }
 
       .terminal-body {
-        padding: 18px 16px 20px;
+        padding: 18px 14px 18px;
       }
 
       .details-list {
@@ -469,9 +480,10 @@
         align-items: flex-start;
       }
 
+      .depiction-icon,
       .package-icon {
-        width: 74px;
-        height: 74px;
+        width: 58px;
+        height: 58px;
       }
 
       .action-bar {
@@ -546,7 +558,7 @@
   </main>
 
   <script src="../assets/js/site.js?v=5" defer></script>
-  <script src="../assets/js/packages.js?v=5" defer></script>
-  <script src="../assets/js/depiction.js?v=6" defer></script>
+  <script src="../assets/js/packages.js?v=6" defer></script>
+  <script src="../assets/js/depiction.js?v=7" defer></script>
 </body>
 </html>
