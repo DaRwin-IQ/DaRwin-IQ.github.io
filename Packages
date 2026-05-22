@@ -17,3 +17,48 @@ SHA1: bc5f5a9c30e0007bae15208588348bbd7370e46e
 SHA256: 794206e11e0ac3388037ca624a22705581118d16781549b6b047e0f81a356aa3
 Installed-Size: 1464
 
+Package: com.darwiniq.autoclicker
+Name: AUTO CLICKER / TOUCH
+Version: 1.0.1
+Architecture: iphoneos-arm64
+Maintainer: DarwinIQ
+Author: DarwinIQ
+Section: Tweaks
+Priority: optional
+Depends: firmware (>= 15.0), ellekit | mobilesubstrate
+Description: 🚀 Key Features
+  1. Intelligent Visual Automation
+   * Text-Based Triggers: Dynamically interact with the UI based on what appears on your screen.
+   * Action Sequencing: Create smart logic paths (e.g., automatically tap "CLAIM" only after "OK" is detected).
+   * Precision Scanning: Optimized screen analysis with customizable "Regions of Interest" to ensure accuracy without draining battery.
+   * Smart Filtering: Advanced matching logic including Exact, Starts-With, and Pattern containment.
+  2. High-Performance Click Engine
+   * Seven Specialized Modes:
+       * ULTRA / EXTREME: Maximum frequency event injection for speed-critical tasks.
+       * HUMAN: Randomized timing and patterns to emulate natural human interaction.
+       * SEQUENCE: Multi-target automation following a predefined logical order.
+       * TAP / HOLD: Professional-grade precision for standard interactions.
+   * Zero-Latency Injection: Low-level touch simulation for instant response times.
+  3. Advanced Macro Suite
+   * Gesture Recording: Capture complex multi-touch sequences and gestures exactly as you perform them.
+   * Dynamic Playback: Total control over playback with adjustable speed multipliers and infinite looping options.
+   * Emergency Stop: Instant-kill floating trigger to terminate any running sequence immediately.
+  4. Professional Interface
+   * Glassmorphism Control Center: A sleek, modern, and non-intrusive UI that stays out of your way.
+   * Live Diagnostics: Real-time feedback on scanning status, sequence progress, and engine performance.
+   * App-Specific Targeting: Fully configurable to ensure the engine only activates within your chosen applications.
+  ---
+  📦 Getting Started
+   1. Launch your target application.
+   2. Toggle the control center using the floating Zenith icon.
+   3. Select your mode: Visual Scanning (OCR), Macro Recording (REC), or Precision Tapping (TAP).
+   4. Configure your parameters and hit START.
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker&v=7
+Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.png
+Filename: debs/com.darwiniq.autoclicker_1.0.1_iphoneos-arm64.deb
+Size: 1236174
+MD5sum: 7c8cbeede01485708b934722898c6da0
+SHA1: 5723f984b6ed021fa1e7c373f7046c32dc0d8b74
+SHA256: 07db6aacb844970ca610d6f854bccc5153158dbc7862f790ecd1eb4a783898fd
+Installed-Size: 1448
+
