@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101817">
+  <meta name="theme-color" content="#080d0c">
   <meta name="description" content="DaRwin-iQ is an iOS jailbreak package source for Sileo, Zebra, and Cydia.">
+  <meta http-equiv="Cache-Control" content="no-cache">
   <meta property="og:title" content="DaRwin-iQ Source">
   <meta property="og:description" content="A polished iOS package source for Sileo, Zebra, and Cydia.">
   <meta property="og:image" content="assets/images/repo-banner.png">
@@ -12,58 +13,86 @@
   <title>DaRwin-iQ Source</title>
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="CydiaIcon.png">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=4">
 </head>
 <body data-page="home">
   <nav class="topbar" aria-label="Primary">
     <a class="brand" href="./" aria-label="DaRwin-iQ home">
-      <img src="assets/images/logo.svg" alt="" width="34" height="34">
+      <img src="assets/images/logo.svg" alt="" width="36" height="36">
       <span>DaRwin-iQ</span>
     </a>
     <div class="nav-links">
       <a href="#packages">Packages</a>
       <a href="#source">Source</a>
+      <a class="nav-cta" href="sileo://source/https://darwin-iq.github.io/" data-add-source="sileo">Sileo</a>
     </div>
   </nav>
 
   <header class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Jailbreak Source</p>
-      <h1>DaRwin-iQ</h1>
-      <p class="hero-copy">Tweaks and tools for modern jailbreak setups, published as a clean APT source for Sileo, Zebra, and Cydia.</p>
-      <div class="action-row" aria-label="Add source">
-        <a class="button primary" href="sileo://source/https://darwin-iq.github.io/" data-add-source="sileo">Add to Sileo</a>
-        <a class="button" href="zbra://sources/add/https://darwin-iq.github.io/" data-add-source="zebra">Zebra</a>
-        <a class="button" href="cydia://url/https://cydia.saurik.com/api/share#?source=https%3A%2F%2Fdarwin-iq.github.io%2F" data-add-source="cydia">Cydia</a>
+      <div class="hero-copy-block">
+        <p class="eyebrow">iOS Jailbreak Source</p>
+        <h1>DaRwin-iQ</h1>
+        <p class="hero-copy">A clean source for focused jailbreak tools, built for Sileo first and ready for Zebra and Cydia.</p>
+        <div class="action-row hero-actions" aria-label="Add source">
+          <a class="button primary" href="sileo://source/https://darwin-iq.github.io/" data-add-source="sileo">Add to Sileo</a>
+          <a class="button glass" href="zbra://sources/add/https://darwin-iq.github.io/" data-add-source="zebra">Zebra</a>
+          <a class="button glass" href="cydia://url/https://cydia.saurik.com/api/share#?source=https%3A%2F%2Fdarwin-iq.github.io%2F" data-add-source="cydia">Cydia</a>
+        </div>
       </div>
+
+      <aside class="source-panel" aria-label="Repository summary">
+        <div class="source-panel-top">
+          <img src="assets/images/logo.svg" alt="" width="54" height="54">
+          <div>
+            <span class="panel-label">Source URL</span>
+            <strong>darwin-iq.github.io</strong>
+          </div>
+        </div>
+        <div class="source-url-pill">
+          <code>https://darwin-iq.github.io/</code>
+        </div>
+        <div class="source-panel-grid">
+          <div>
+            <span>Packages</span>
+            <strong data-package-count>1</strong>
+          </div>
+          <div>
+            <span>Suite</span>
+            <strong data-repo-suite>stable</strong>
+          </div>
+        </div>
+      </aside>
     </div>
   </header>
 
   <main>
-    <section class="section featured-band" aria-labelledby="featured-title">
-      <div class="section-inner featured-layout">
-        <div>
-          <p class="section-label">Featured</p>
-          <h2 id="featured-title">AUTO CLICKER / TOUCH</h2>
+    <section class="section spotlight-band" aria-labelledby="spotlight-title">
+      <div class="section-inner spotlight-layout">
+        <div class="spotlight-media">
+          <img src="assets/package-icons/com.darwiniq.autoclicker.png" alt="AUTO CLICKER / TOUCH icon" width="188" height="188">
+        </div>
+        <div class="spotlight-content">
+          <p class="section-label">Featured Package</p>
+          <h2 id="spotlight-title">AUTO CLICKER / TOUCH</h2>
           <p class="section-copy">Auto touch and click controls with a companion app target selector.</p>
-          <div class="mini-meta" aria-label="Featured package metadata">
-            <span>Version 1.0.0</span>
+          <div class="mini-meta" aria-label="Package metadata">
+            <span>1.0.0</span>
             <span>iOS 15+</span>
             <span>iphoneos-arm64</span>
           </div>
           <div class="action-row compact">
-            <a class="button dark" href="depictions/?package=com.darwiniq.autoclicker">View Package</a>
-            <a class="button soft" href="debs/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb">Download</a>
+            <a class="button dark" href="depictions/?package=com.darwiniq.autoclicker">Package Details</a>
+            <a class="button soft" href="debs/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb">Download DEB</a>
           </div>
         </div>
-        <img class="featured-icon" src="assets/package-icons/com.darwiniq.autoclicker.png" alt="AUTO CLICKER / TOUCH icon" width="176" height="176">
       </div>
     </section>
 
     <section class="section source-band" id="source" aria-labelledby="source-title">
       <div class="section-inner source-layout">
         <div>
-          <p class="section-label">Source URL</p>
+          <p class="section-label">Source</p>
           <h2 id="source-title">https://darwin-iq.github.io/</h2>
         </div>
         <div class="copy-panel">
@@ -77,10 +106,10 @@
       <div class="section-inner">
         <div class="section-heading">
           <div>
-            <p class="section-label">Available Now</p>
+            <p class="section-label">Catalog</p>
             <h2 id="packages-title">Packages</h2>
           </div>
-          <span class="count-chip"><span data-package-count>1</span> package</span>
+          <a class="button dark slim" href="packages.html">View All</a>
         </div>
         <div class="package-grid" id="package-grid" aria-live="polite">
           <article class="empty-state">
@@ -92,6 +121,8 @@
     </section>
   </main>
 
+  <a class="mobile-sileo" href="sileo://source/https://darwin-iq.github.io/" data-add-source="sileo">Add to Sileo</a>
+
   <footer class="site-footer">
     <div class="section-inner footer-inner">
       <span>DaRwin-iQ</span>
@@ -99,7 +130,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site.js" defer></script>
-  <script src="assets/js/packages.js" defer></script>
+  <script src="assets/js/site.js?v=4" defer></script>
+  <script src="assets/js/packages.js?v=4" defer></script>
 </body>
 </html>
