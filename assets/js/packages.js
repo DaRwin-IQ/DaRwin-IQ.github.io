@@ -69,7 +69,7 @@
 
     const view = document.createElement("a");
     view.href = depictionUrl(pkg);
-    view.textContent = "View";
+    view.textContent = "Details";
     actions.appendChild(view);
 
     if (pkg.Filename) {
@@ -112,7 +112,7 @@
     if (!visible.length) {
       const empty = document.createElement("article");
       empty.className = "empty-state";
-      empty.innerHTML = "<h3>No packages found</h3><p>Add packages to the repo or adjust the filter.</p>";
+      empty.innerHTML = "<h3>No packages found</h3><p>Try another search or section.</p>";
       grid.appendChild(empty);
       return;
     }
@@ -132,7 +132,7 @@
       const updated = response.headers.get("last-modified");
       if (updated) {
         document.querySelectorAll("[data-repo-updated]").forEach((node) => {
-          node.textContent = new Date(updated).toLocaleDateString();
+          node.textContent = "Updated " + new Date(updated).toLocaleDateString();
         });
       }
       populateSections(packages);

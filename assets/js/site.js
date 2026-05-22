@@ -53,6 +53,7 @@
     document.title = document.title.replace("DaRwin-iQ", config.name || defaults.name);
     setText("[data-repo-suite]", config.suite || defaults.suite);
     setText("#repo-url", source);
+    setText("#source-title", source);
 
     document.querySelectorAll("[data-add-source]").forEach((link) => {
       const manager = link.getAttribute("data-add-source");

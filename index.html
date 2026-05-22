@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10211c">
+  <meta name="theme-color" content="#101817">
   <meta name="description" content="DaRwin-iQ is an iOS jailbreak package source for Sileo, Zebra, and Cydia.">
   <meta property="og:title" content="DaRwin-iQ Source">
   <meta property="og:description" content="A polished iOS package source for Sileo, Zebra, and Cydia.">
@@ -22,50 +22,53 @@
     </a>
     <div class="nav-links">
       <a href="#packages">Packages</a>
-      <a href="depictions/">Depictions</a>
-      <a href="Release">Release</a>
+      <a href="#source">Source</a>
     </div>
   </nav>
 
   <header class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">iOS Package Source</p>
+      <p class="eyebrow">Jailbreak Source</p>
       <h1>DaRwin-iQ</h1>
-      <p class="hero-copy">A clean source for jailbreak packages, depictions, and update metadata built for Sileo, Zebra, and Cydia.</p>
+      <p class="hero-copy">Tweaks and tools for modern jailbreak setups, published as a clean APT source for Sileo, Zebra, and Cydia.</p>
       <div class="action-row" aria-label="Add source">
-        <a class="button primary" href="#" data-add-source="sileo">Add to Sileo</a>
-        <a class="button" href="#" data-add-source="zebra">Zebra</a>
-        <a class="button" href="#" data-add-source="cydia">Cydia</a>
+        <a class="button primary" href="sileo://source/https://darwin-iq.github.io/" data-add-source="sileo">Add to Sileo</a>
+        <a class="button" href="zbra://sources/add/https://darwin-iq.github.io/" data-add-source="zebra">Zebra</a>
+        <a class="button" href="cydia://url/https://cydia.saurik.com/api/share#?source=https%3A%2F%2Fdarwin-iq.github.io%2F" data-add-source="cydia">Cydia</a>
       </div>
-      <dl class="hero-stats" aria-label="Repository status">
-        <div>
-          <dt>Packages</dt>
-          <dd data-package-count>0</dd>
-        </div>
-        <div>
-          <dt>Suite</dt>
-          <dd data-repo-suite>stable</dd>
-        </div>
-        <div>
-          <dt>Updated</dt>
-          <dd data-repo-updated>Ready</dd>
-        </div>
-      </dl>
     </div>
   </header>
 
   <main>
-    <section class="section intro-band" aria-labelledby="source-title">
-      <div class="section-inner two-column">
+    <section class="section featured-band" aria-labelledby="featured-title">
+      <div class="section-inner featured-layout">
+        <div>
+          <p class="section-label">Featured</p>
+          <h2 id="featured-title">AUTO CLICKER / TOUCH</h2>
+          <p class="section-copy">Auto touch and click controls with a companion app target selector.</p>
+          <div class="mini-meta" aria-label="Featured package metadata">
+            <span>Version 1.0.0</span>
+            <span>iOS 15+</span>
+            <span>iphoneos-arm64</span>
+          </div>
+          <div class="action-row compact">
+            <a class="button dark" href="depictions/?package=com.darwiniq.autoclicker">View Package</a>
+            <a class="button soft" href="debs/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb">Download</a>
+          </div>
+        </div>
+        <img class="featured-icon" src="assets/package-icons/com.darwiniq.autoclicker.png" alt="AUTO CLICKER / TOUCH icon" width="176" height="176">
+      </div>
+    </section>
+
+    <section class="section source-band" id="source" aria-labelledby="source-title">
+      <div class="section-inner source-layout">
         <div>
           <p class="section-label">Source URL</p>
-          <h2 id="source-title">Use the public URL after publishing.</h2>
+          <h2 id="source-title">https://darwin-iq.github.io/</h2>
         </div>
         <div class="copy-panel">
-          <code id="repo-url">Set repo.json url before release</code>
-          <button class="icon-button" type="button" data-copy-repo aria-label="Copy source URL" title="Copy source URL">
-            <span aria-hidden="true">Copy</span>
-          </button>
+          <code id="repo-url">https://darwin-iq.github.io/</code>
+          <button class="icon-button" type="button" data-copy-repo aria-label="Copy source URL" title="Copy source URL">Copy</button>
         </div>
       </div>
     </section>
@@ -74,43 +77,15 @@
       <div class="section-inner">
         <div class="section-heading">
           <div>
-            <p class="section-label">Catalog</p>
+            <p class="section-label">Available Now</p>
             <h2 id="packages-title">Packages</h2>
           </div>
-          <a class="text-link" href="Packages">Raw index</a>
+          <span class="count-chip"><span data-package-count>1</span> package</span>
         </div>
         <div class="package-grid" id="package-grid" aria-live="polite">
           <article class="empty-state">
-            <h3>No packages yet</h3>
-            <p>Add `.deb` files to `debs/`, then run `./build-repo.sh` to publish the package index.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section workflow-band" aria-labelledby="workflow-title">
-      <div class="section-inner">
-        <div class="section-heading">
-          <div>
-            <p class="section-label">Build Flow</p>
-            <h2 id="workflow-title">Prepared for real packages.</h2>
-          </div>
-        </div>
-        <div class="step-grid">
-          <article>
-            <span class="step-number">01</span>
-            <h3>Drop packages</h3>
-            <p>Place signed or unsigned `.deb` files inside `debs/`.</p>
-          </article>
-          <article>
-            <span class="step-number">02</span>
-            <h3>Build indexes</h3>
-            <p>Run `./build-repo.sh` to refresh `Packages`, compressed indexes, and `Release` checksums.</p>
-          </article>
-          <article>
-            <span class="step-number">03</span>
-            <h3>Publish</h3>
-            <p>Push the folder to GitHub Pages or any static host that serves files without rewriting paths.</p>
+            <h3>Loading packages</h3>
+            <p>Checking the published package index.</p>
           </article>
         </div>
       </div>
@@ -120,7 +95,7 @@
   <footer class="site-footer">
     <div class="section-inner footer-inner">
       <span>DaRwin-iQ</span>
-      <span>APT source for iOS package managers</span>
+      <span data-repo-updated>Updated source</span>
     </div>
   </footer>
 

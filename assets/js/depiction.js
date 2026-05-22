@@ -22,7 +22,9 @@
 
     const title = field(pkg, "Name", field(pkg, "Package", "Package"));
     const lines = descriptionLines(pkg);
+    const repoUrl = window.RepoConfig && window.RepoConfig.resolvedUrl ? window.RepoConfig.resolvedUrl : "https://darwin-iq.github.io/";
     main.innerHTML = "";
+    document.title = title + " - DaRwin-iQ";
 
     const hero = document.createElement("div");
     hero.className = "depiction-hero";
@@ -59,12 +61,32 @@
       main.appendChild(list);
     }
 
+    const actions = document.createElement("div");
+    actions.className = "depiction-actions";
+
+    const add = document.createElement("a");
+    add.className = "button dark";
+    add.href = "sileo://source/" + repoUrl;
+    add.textContent = "Add to Sileo";
+    actions.appendChild(add);
+
+    if (pkg.Filename) {
+      const download = document.createElement("a");
+      download.className = "button soft";
+      download.href = new URL(pkg.Filename, repoUrl).href;
+      download.textContent = "Download";
+      actions.appendChild(download);
+    }
+
+    main.appendChild(actions);
+
     const rows = [
       ["Identifier", field(pkg, "Package")],
       ["Version", field(pkg, "Version")],
       ["Architecture", field(pkg, "Architecture")],
+      ["Depends", field(pkg, "Depends")],
       ["Maintainer", field(pkg, "Maintainer")],
-      ["Filename", field(pkg, "Filename")]
+      ["Source", repoUrl]
     ];
 
     meta.innerHTML = "";
