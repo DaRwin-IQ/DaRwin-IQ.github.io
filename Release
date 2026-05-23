@@ -3,23 +3,23 @@ Label: DaRwin-iQ
 Suite: stable
 Version: 1.0
 Codename: iphoneos
-Date: Sat, 23 May 2026 01:02:36 GMT
+Date: Sat, 23 May 2026 01:07:18 GMT
 Architectures: iphoneos-arm iphoneos-arm64
 Components: main
 Description: An advanced iOS jailbreak package source featuring auto tapping, touch recording, OCR-driven actions, and app-specific automation for Sileo, Zebra, and Cydia.
 Maintainer: DaRwin iQ <lldrwll@gmail.com>
 MD5Sum:
- bb954152f5a7239e6dc3143ba68fe09e             2136 Packages
- 5021119f98e02e8236c032a8aebeaf84             1228 Packages.gz
- 087e4343fe3a411d927b0361c7f9da80             1306 Packages.bz2
- ec2a31f55d01f1df3fd11a145467b138             1288 Packages.xz
+ e3ca2ffedd574de232e59bae607088d3              816 Packages
+ 2da0aea315c8b59447b07119792aeff2              509 Packages.gz
+ cf94f83b19597dca98b1a8e1e70cce77              589 Packages.bz2
+ c89438ca1d42a78b6e2a35928ed08f5b              568 Packages.xz
 SHA1:
- 130582141a86f96b6cbdce711d41c9d6d2cc0442             2136 Packages
- 4b922183b6cf5632c7d9bd9c6ad02e971e3017b4             1228 Packages.gz
- 1509f423179230051b55743512028ff6db121bdb             1306 Packages.bz2
- 92c05a9e748cf9bba85dfc15c545a498ef076b1f             1288 Packages.xz
+ 2244ea86ff53d9a504d5f690a86ca998fdb454cf              816 Packages
+ 562c04ff441ecf0263294ea51118bc0a5ea4e193              509 Packages.gz
+ 0ed3c9c6465f89c03d36d8ceba85bda5f14f4462              589 Packages.bz2
+ f80abae824a8a786d88c5acf4308702d99570c8a              568 Packages.xz
 SHA256:
- c490722218e75e0948ecefae013ff1462b782878d6aef3849817008e7a4a8123             2136 Packages
- 92274e9737c7b5aa63ef9cc53931157a0b696b805e238f770810ce6c51064886             1228 Packages.gz
- 71fd290cd83320b9e2861894826b42f12d69ecda2bc6e12280009b7efa5a1f9d             1306 Packages.bz2
- fd34404fcf413798e185e5d2a6e07ee98d22a5d28980bb8a2bdbcad05a5e7157             1288 Packages.xz
+ 8c387ddd41089a4bb7ee6b2e81a7009f324b6eba8ab1c791c0a02b6ed620fb62              816 Packages
+ 0db52330cc925c9aaaabd7c68106df9a25e3d14e2f9a2ba8acf2450911874f3d              509 Packages.gz
+ af973670bd437ccd4ae1f63d778ddd44b7a9d2f862a854a870c52aa6c78453ec              589 Packages.bz2
+ 860472d28ae3409d712e51c208f102357d19126e28af49e87608b6c97221db6e              568 Packages.xz
