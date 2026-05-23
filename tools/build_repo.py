@@ -106,12 +106,8 @@ def find_package_icon(root: Path, package_id: str) -> str:
 def find_sileo_depiction(root: Path, package_id: str) -> str:
     if not package_id:
         return ""
-    depiction_dir = root / "depictions" / package_id
-    for filename in ("depiction.json", "depictions.json"):
-        candidate = depiction_dir / filename
-        if candidate.exists():
-            return candidate.relative_to(root).as_posix()
-    return ""
+    candidate = root / "depictions" / package_id / "depiction.json"
+    return candidate.relative_to(root).as_posix() if candidate.exists() else ""
 
 
 def normalize_fields(root: Path, deb: Path, fields: dict, config: dict) -> dict:

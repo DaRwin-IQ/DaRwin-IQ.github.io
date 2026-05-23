@@ -8,6 +8,7 @@ Professional Sileo/APT source scaffold for iOS jailbreak packages.
 - `Packages`, `Packages.gz`, `Packages.bz2`, and `Packages.xz` are generated indexes.
 - `Release` contains repo metadata and checksums.
 - `depictions/` contains the web depiction page.
+- Native Sileo package depictions live at `depictions/<package-id>/depiction.json`.
 - `assets/` contains the site design, scripts, and images.
 - `assets/package-icons/` stores optional per-package icons named by package id.
 - `repo.json` controls public metadata.
@@ -84,6 +85,13 @@ Recommended fields:
 - `Depends`
 - `Homepage`
 - `Depiction`
+- `SileoDepiction`
+
+For Auto Clicker, edit only this native Sileo depiction file:
+
+```text
+depictions/com.darwiniq.autoclicker/depiction.json
+```
 
 ## Source Links
 
