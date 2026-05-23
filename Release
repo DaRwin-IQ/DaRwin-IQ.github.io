@@ -3,23 +3,23 @@ Label: DaRwin-iQ
 Suite: stable
 Version: 1.0
 Codename: iphoneos
-Date: Sat, 23 May 2026 00:05:56 GMT
+Date: Sat, 23 May 2026 00:07:15 GMT
 Architectures: iphoneos-arm iphoneos-arm64
 Components: main
 Description: An advanced iOS jailbreak package source featuring auto tapping, touch recording, OCR-driven actions, and app-specific automation for Sileo, Zebra, and Cydia.
 Maintainer: DaRwin iQ <lldrwll@gmail.com>
 MD5Sum:
  0c04a328babc7938dfe33d382528e3b6             2627 Packages
- cf036d068d65d71095b090d2b4767290             1505 Packages.gz
+ a6631fd7742e6701cf60749bd7f47524             1505 Packages.gz
  8514c508b1745a5eb91eaca1068da50c             1552 Packages.bz2
  22e8252528e8566ce15c7bd0d10f5554             1568 Packages.xz
 SHA1:
  21cbbb0d25cb86b80b873ee2c1199723273a7be5             2627 Packages
- d3d03e8b5f8ea25544ffcb0d73e75bbb9ef89bc2             1505 Packages.gz
+ ae91f2d5e006fa5393730bd0ee00a85b10e24062             1505 Packages.gz
  b614e92e2a381ae358835d73454d98c1ad11e9b2             1552 Packages.bz2
  a4ea3407a620c2b37c5ef955d5d230997e6b49cc             1568 Packages.xz
 SHA256:
  bdb7f1665aee8868f34dd16f880cddcd97c7f6fff3565f477dba74135343d6a8             2627 Packages
- e2c127db76a935f0b7d21368cd0d4519c1b9971b5bfdbbfc09396b0ba674b61a             1505 Packages.gz
+ 8d0983c60b2f73fda566afad84eb9f5a50142233232f3622eb681dec7d0aa574             1505 Packages.gz
  f81912bb56574bc1d25c92ec175bdfbee9951bb6b17936f1c6fd0ffb45399156             1552 Packages.bz2
  0302adb0f3cb02a49f4cc908a064e02a11ee482c132b0c2fda6931ede86dbc6e             1568 Packages.xz
