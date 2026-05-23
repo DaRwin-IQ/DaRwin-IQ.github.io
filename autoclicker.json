@@ -18,30 +18,25 @@
                     "screenshots": [
                         {
                             "accessibilityText": "Screenshot 1",
-                            "url": "[url=https://top4top.io/][img]https://l.top4top.io/p_3794o9m3f1.jpeg[/img][/url]",
+                            "url": "https://darwin-iq.github.io/IMG_0572.jpeg",
                             "fullSize": "https://darwin-iq.github.io/IMG_0572.jpeg"
                         },
                         {
                             "accessibilityText": "Screenshot 2",
-                            "url": "[url=https://top4top.io/][img]https://a.top4top.io/p_3794shql62.jpeg[/img][/url]",
+                            "url": "https://darwin-iq.github.io/IMG_0573.jpeg",
                             "fullSize": "https://darwin-iq.github.io/IMG_0573.jpeg"
                         },
                         {
                             "accessibilityText": "Screenshot 3",
-                            "url": "[url=https://top4top.io/][img]https://b.top4top.io/p_3794f60h23.jpeg[/img][/url]",
+                            "url": "https://darwin-iq.github.io/IMG_0574.jpeg",
                             "fullSize": "https://darwin-iq.github.io/IMG_0574.jpeg"
                         },
                         {
                             "accessibilityText": "Screenshot 4",
-                            "url": "[url=https://top4top.io/][img]https://c.top4top.io/p_3794j8sxt4.jpeg[/img][/url]",
+                            "url": "https://darwin-iq.github.io/IMG_0575.jpeg",
                             "fullSize": "https://darwin-iq.github.io/IMG_0575.jpeg"
                         }
                     ]
-                },
-                {
-                    "class": "SileoMarkdownView",
-                    "markdown": "### ⚡ Advanced Auto-Clicker\n\n**AutoClicker / Touch** is a high-performance automation tool for iOS.\n\n#### 🚀 Features:\n* **ULTRA Mode (⚡)**: Maximum speed clicking.\n* **Touch Recorder**: Record and play back gestures.\n* **Human Mode**: Anti-detection jitter.\n* **Rootless Support**: Built for Dopamine & Palera1n.\n\nDeveloped by **DarwinIQ**",
-                    "useMargins": true
                 },
                 {
                     "class": "SileoSeparatorView"
