@@ -1,0 +1,46 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "headerImage": "https://darwin-iq.github.io/assets/IMG_0572.jpeg",
+  "tintColor": "#007AFF",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "Auto Clicker"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "## Description\nProfessional Auto Clicker tweak for iOS.\n\n### Features\n- Fast and reliable clicking\n- Customizable tap intervals\n- Clean interface\n- High performance\n- Rootless support"
+        },
+        {
+          "class": "DepictionImageView",
+          "URL": "https://darwin-iq.github.io/assets/IMG_0573.jpeg",
+          "width": 320,
+          "height": 640,
+          "cornerRadius": 18,
+          "alignment": 1
+        },
+        {
+          "class": "DepictionImageView",
+          "URL": "https://darwin-iq.github.io/assets/IMG_0574.jpeg",
+          "width": 320,
+          "height": 640,
+          "cornerRadius": 18,
+          "alignment": 1
+        },
+        {
+          "class": "DepictionImageView",
+          "URL": "https://darwin-iq.github.io/assets/IMG_0575.jpeg",
+          "width": 320,
+          "height": 640,
+          "cornerRadius": 18,
+          "alignment": 1
+        }
+      ]
+    }
+  ]
+}
