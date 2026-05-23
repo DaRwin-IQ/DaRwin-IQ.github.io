@@ -13,6 +13,10 @@
           "title": "Auto Clicker"
         },
         {
+          "class": "DepictionMarkdownView",
+          "markdown": "## Description\nProfessional Auto Clicker tweak for iOS.\n\n### Features\n- Fast and reliable clicking\n- Customizable tap intervals\n- Clean interface\n- High performance\n- Rootless support"
+        },
+        {
           "class": "DepictionSubheaderView",
           "title": "Screenshots"
         },
@@ -34,10 +38,6 @@
               "accessibilityText": "Auto Clicker screenshot 3"
             }
           ]
-        },
-        {
-          "class": "DepictionMarkdownView",
-          "markdown": "## Description\nProfessional Auto Clicker tweak for iOS.\n\n### Features\n- Fast and reliable clicking\n- Customizable tap intervals\n- Clean interface\n- High performance\n- Rootless support"
         }
       ]
     }
