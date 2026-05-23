@@ -92,3 +92,23 @@ The website generates package-manager links from the published URL:
 - Sileo: `sileo://source/<repo-url>`
 - Zebra: `zbra://sources/add/<repo-url>`
 - Cydia: `cydia://url/https://cydia.saurik.com/api/share#?source=<repo-url>`
+
+---
+
+## Auto Touch/Click Tool
+
+تتيح هذه الأداة إمكانية محاكاة اللمس والنقر التلقائي بسهولة ودقة.
+
+### وصف الصور:
+
+#### صورة 1:
+![Auto Touch/Click 1](0572.jpeg)
+
+#### صورة 2:
+![Auto Touch/Click 2](0573.jpeg)
+
+#### صورة 3:
+![Auto Touch/Click 3](0574.jpeg)
+
+#### صورة 4:
+![Auto Touch/Click 4](0575.jpeg)
