@@ -17,28 +17,27 @@
           "markdown": "## Description\nProfessional Auto Clicker tweak for iOS.\n\n### Features\n- Fast and reliable clicking\n- Customizable tap intervals\n- Clean interface\n- High performance\n- Rootless support"
         },
         {
-          "class": "DepictionImageView",
-          "URL": "https://darwin-iq.github.io/assets/IMG_0573.jpeg",
-          "width": 320,
-          "height": 640,
-          "cornerRadius": 18,
-          "alignment": 1
+          "class": "DepictionSubheaderView",
+          "title": "Screenshots"
         },
         {
-          "class": "DepictionImageView",
-          "URL": "https://darwin-iq.github.io/assets/IMG_0574.jpeg",
-          "width": 320,
-          "height": 640,
-          "cornerRadius": 18,
-          "alignment": 1
-        },
-        {
-          "class": "DepictionImageView",
-          "URL": "https://darwin-iq.github.io/assets/IMG_0575.jpeg",
-          "width": 320,
-          "height": 640,
-          "cornerRadius": 18,
-          "alignment": 1
+          "class": "DepictionScreenshotsView",
+          "itemCornerRadius": 18,
+          "itemSize": "{160, 320}",
+          "screenshots": [
+            {
+              "url": "https://darwin-iq.github.io/assets/IMG_0573.jpeg",
+              "accessibilityText": "Auto Clicker screenshot 1"
+            },
+            {
+              "url": "https://darwin-iq.github.io/assets/IMG_0574.jpeg",
+              "accessibilityText": "Auto Clicker screenshot 2"
+            },
+            {
+              "url": "https://darwin-iq.github.io/assets/IMG_0575.jpeg",
+              "accessibilityText": "Auto Clicker screenshot 3"
+            }
+          ]
         }
       ]
     }
