@@ -1,0 +1,51 @@
+{
+  "minVersion": "0.1",
+  "class": "SileoRootView",
+  "tabs": [
+    {
+      "class": "SileoDetailsTab",
+      "tabTitle": "Details",
+      "views": [
+        {
+          "class": "SileoHeaderView",
+          "title": "AUTO CLICKER / TOUCH",
+          "useMargins": true
+n        },
+        {
+          "class": "SileoParagraphView",
+          "text": "تتيح أداة Auto Touch/Click إمكانية محاكاة النقر والتفاعل مع الشاشة تلقائيًا بدقة وسهولة. أسفل تجد صورًا توضيحية للاستخدام."
+        },
+        {
+          "class": "SileoScreenshotsView",
+          "itemSize": "{160, 346}",
+          "itemCornerRadius": 10,
+          "screenshots": [
+            {
+              "accessibilityText": "Screenshot 1",
+              "url": "https://darwin-iq.github.io/IMG_0572.jpeg",
+              "fullSize": "https://darwin-iq.github.io/IMG_0572.jpeg"
+            },
+            {
+              "accessibilityText": "Screenshot 2",
+              "url": "https://darwin-iq.github.io/IMG_0573.jpeg",
+              "fullSize": "https://darwin-iq.github.io/IMG_0573.jpeg"
+            },
+            {
+              "accessibilityText": "Screenshot 3",
+              "url": "https://darwin-iq.github.io/IMG_0574.jpeg",
+              "fullSize": "https://darwin-iq.github.io/IMG_0574.jpeg"
+            },
+            {
+              "accessibilityText": "Screenshot 4",
+              "url": "https://darwin-iq.github.io/IMG_0575.jpeg",
+              "fullSize": "https://darwin-iq.github.io/IMG_0575.jpeg"
+            }
+          ]
+        },
+        {
+          "class": "SileoSeparatorView"
+        }
+      ]
+    }
+  ]
+}
