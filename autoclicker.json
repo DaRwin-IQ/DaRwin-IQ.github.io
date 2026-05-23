@@ -12,6 +12,10 @@
                     "useMargins": true
                 },
                 {
+                    "class": "SileoParagraphView",
+                    "text": "تتيح أداة Auto Touch/Click إمكانية محاكاة النقر والتفاعل مع الشاشة تلقائيًا بدقة وسهولة."
+                },
+                {
                     "class": "SileoScreenshotsView",
                     "itemSize": "{160, 346}",
                     "itemCornerRadius": 10,
