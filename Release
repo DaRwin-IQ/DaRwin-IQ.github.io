@@ -3,23 +3,23 @@ Label: DaRwin-iQ
 Suite: stable
 Version: 1.0
 Codename: iphoneos
-Date: Sat, 23 May 2026 00:20:50 GMT
+Date: Sat, 23 May 2026 01:00:12 GMT
 Architectures: iphoneos-arm iphoneos-arm64
 Components: main
 Description: An advanced iOS jailbreak package source featuring auto tapping, touch recording, OCR-driven actions, and app-specific automation for Sileo, Zebra, and Cydia.
 Maintainer: DaRwin iQ <lldrwll@gmail.com>
 MD5Sum:
  bb954152f5a7239e6dc3143ba68fe09e             2136 Packages
- 18d125024319dcb328e0824041a63780             1228 Packages.gz
+ cafb90f9b5198b1d67cc86c66db057f7             1228 Packages.gz
  087e4343fe3a411d927b0361c7f9da80             1306 Packages.bz2
  ec2a31f55d01f1df3fd11a145467b138             1288 Packages.xz
 SHA1:
  130582141a86f96b6cbdce711d41c9d6d2cc0442             2136 Packages
- fd4c6cb9100c6eaf4d0125d778a49738380995ea             1228 Packages.gz
+ 58a6806c9a43db7d52b49fc3e5aaff6aba9aab11             1228 Packages.gz
  1509f423179230051b55743512028ff6db121bdb             1306 Packages.bz2
  92c05a9e748cf9bba85dfc15c545a498ef076b1f             1288 Packages.xz
 SHA256:
  c490722218e75e0948ecefae013ff1462b782878d6aef3849817008e7a4a8123             2136 Packages
- ba05ab5cae40111da2fc6f643b8e3ff4c86ddabf3fcc1cb9cb4941ce7acf6465             1228 Packages.gz
+ 482582a2df3519af0a24dd54fa7c55026a0ee9a6913417a3d23b1d161452d059             1228 Packages.gz
  71fd290cd83320b9e2861894826b42f12d69ecda2bc6e12280009b7efa5a1f9d             1306 Packages.bz2
  fd34404fcf413798e185e5d2a6e07ee98d22a5d28980bb8a2bdbcad05a5e7157             1288 Packages.xz
