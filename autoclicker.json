@@ -1,0 +1,56 @@
+{
+    "minVersion": "0.1",
+    "class": "SileoRootView",
+    "tabs": [
+        {
+            "class": "SileoDetailsTab",
+            "tabTitle": "Details",
+            "views": [
+                {
+                    "class": "SileoHeaderView",
+                    "title": "AUTO CLICKER / TOUCH",
+                    "useMargins": true
+                },
+                {
+                    "class": "SileoScreenshotsView",
+                    "itemSize": "{160, 346}",
+                    "itemCornerRadius": 10,
+                    "screenshots": [
+                        {
+                            "accessibilityText": "Screenshot 1",
+                            "url": "https://darwin-iq.github.io/IMG_0572.jpeg",
+                            "fullSize": "https://darwin-iq.github.io/IMG_0572.jpeg"
+                        },
+                        {
+                            "accessibilityText": "Screenshot 2",
+                            "url": "https://darwin-iq.github.io/IMG_0573.jpeg",
+                            "fullSize": "https://darwin-iq.github.io/IMG_0573.jpeg"
+                        },
+                        {
+                            "accessibilityText": "Screenshot 3",
+                            "url": "https://darwin-iq.github.io/IMG_0574.jpeg",
+                            "fullSize": "https://darwin-iq.github.io/IMG_0574.jpeg"
+                        },
+                        {
+                            "accessibilityText": "Screenshot 4",
+                            "url": "https://darwin-iq.github.io/IMG_0575.jpeg",
+                            "fullSize": "https://darwin-iq.github.io/IMG_0575.jpeg"
+                        }
+                    ]
+                },
+                {
+                    "class": "SileoMarkdownView",
+                    "markdown": "### ⚡ Advanced Auto-Clicker\n\n**AutoClicker / Touch** is a high-performance automation tool for iOS.\n\n#### 🚀 Features:\n* **ULTRA Mode (⚡)**: Maximum speed clicking.\n* **Touch Recorder**: Record and play back gestures.\n* **Human Mode**: Anti-detection jitter.\n* **Rootless Support**: Built for Dopamine & Palera1n.\n\nDeveloped by **DarwinIQ**",
+                    "useMargins": true
+                },
+                {
+                    "class": "SileoSeparatorView"
+                },
+                {
+                    "class": "SileoSpacerView",
+                    "spacing": 20
+                }
+            ]
+        }
+    ]
+}
