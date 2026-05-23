@@ -1,7 +1,7 @@
 {
   "minVersion": "0.4",
   "class": "DepictionTabView",
-  "headerImage": "https://darwin-iq.github.io/assets/cover.png",
+  "headerImage": "https://darwin-iq.github.io/assets/images/repo-banner.png",
   "tintColor": "#007AFF",
   "tabs": [
     {

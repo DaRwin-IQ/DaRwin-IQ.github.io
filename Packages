@@ -7,13 +7,14 @@ Author: DarwinIQ
 Section: Tweaks
 Priority: optional
 Depends: firmware (>= 15.0), ellekit | mobilesubstrate
-Description: ⚡ AutoClicker / Touch (iOS)
+Description: An iOS automation tweak built to record, replay, and manage touch actions safely and efficiently.
 Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker&v=7
+SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker/depiction.json
 Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.png
 Filename: debs/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb
-Size: 1236064
-MD5sum: 38584f1682eaa0fc6b4ecb6272848e4d
-SHA1: 5d7ddcb07837790096bf3e4ee2df89198401e981
-SHA256: d67a519d17d3e146d1ff28a6d6484f58541ed5879661264dfc31979909af396f
-Installed-Size: 1480
+Size: 1260486
+MD5sum: 569b14743482f0c9b0f1cba46c0ef57c
+SHA1: 8e58db151e79f15bd103da486c33da55226cde64
+SHA256: aca8c506aa3678f625eb390ad71c559c8c0a8e404c69dc452b95956f64aa1471
+Installed-Size: 1648
 

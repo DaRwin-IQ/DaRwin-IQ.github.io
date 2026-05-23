@@ -103,6 +103,17 @@ def find_package_icon(root: Path, package_id: str) -> str:
     return ""
 
 
+def find_sileo_depiction(root: Path, package_id: str) -> str:
+    if not package_id:
+        return ""
+    depiction_dir = root / "depictions" / package_id
+    for filename in ("depiction.json", "depictions.json"):
+        candidate = depiction_dir / filename
+        if candidate.exists():
+            return candidate.relative_to(root).as_posix()
+    return ""
+
+
 def normalize_fields(root: Path, deb: Path, fields: dict, config: dict) -> dict:
     out = dict(fields)
     out.setdefault("Section", config.get("default_section", "Tweaks"))
@@ -118,6 +129,9 @@ def normalize_fields(root: Path, deb: Path, fields: dict, config: dict) -> dict:
     if config.get("add_default_depictions", True) and base_url and package_id:
         out.setdefault("Depiction", f"{base_url}depictions/?package={package_id}&v=7")
     if base_url and package_id:
+        sileo_depiction = find_sileo_depiction(root, package_id)
+        if sileo_depiction:
+            out.setdefault("SileoDepiction", f"{base_url}{sileo_depiction}")
         package_icon = find_package_icon(root, package_id)
         out.setdefault("Icon", f"{base_url}{package_icon or 'CydiaIcon.png'}")
 
