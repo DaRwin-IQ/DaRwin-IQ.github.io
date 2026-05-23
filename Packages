@@ -1,0 +1,42 @@
+Package: com.darwiniq.autoclicker
+Name: AUTO CLICKER / TOUCH
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Maintainer: DarwinIQ
+Author: DarwinIQ
+Section: Tweaks
+Priority: optional
+Depends: firmware (>= 15.0), ellekit | mobilesubstrate
+Description: ⚡ AutoClicker / Touch (iOS)
+  > Advanced high-performance auto-clicker and touch recorder tweak for jailbroken iOS devices.
+  🚀 Overview
+  AutoClicker / Touch is a sophisticated automation tool for iOS, designed for extreme speed and precision. Built with a modular architecture, it offers a
+  seamless overlay UI to automate complex touch patterns, gestures, and repetitive tasks.
+  ✨ Key Features
+   * 6 Dynamic Tap Modes:
+       * Normal: Standard precision clicking.
+       * Hold: Automated long-press simulation.
+       * Human: Anti-detection mode with micro-jitter and randomized timing.
+       * Double: Rapid double-tap execution.
+       * Sequence: Multi-point sequential automation.
+       * ULTRA (⚡): Extreme-speed engine with 0.001s interval support.
+   * Touch Recorder V1: Record complex multi-finger gestures and play them back with custom loop counts and speed scaling.
+   * Professional UI/UX: A refined, draggable floating overlay with real-time status updates and haptic feedback.
+   * Rootless Architecture: Native support for modern jailbreaks (Dopamine, Palera1n) on arm64 and arm64e.
+  🛠 Technical Specifications
+   * iOS: 14.0+ 
+   * Architecture: arm64, arm64e (Rootless).
+   * Build System: Theos (Modular Subproject Structure).
+  📦 Installation
+   1. Build the package: make package
+   2. Install the .deb via Filza or Sileo.
+   3. Open the AutoClicker app to configure global settings and target applications.
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker&v=7
+Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.png
+Filename: debs/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb
+Size: 1236708
+MD5sum: 4d309482c9f2178b642e230e0c346b71
+SHA1: 336809978ee5462c465b40886ca86fedd26ed681
+SHA256: 36e014386ac6bb650d90f621994376c86ca5383e8751bee283f241f2f6d7fd3e
+Installed-Size: 1480
+
