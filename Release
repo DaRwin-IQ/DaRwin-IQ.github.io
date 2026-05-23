@@ -3,23 +3,23 @@ Label: DaRwin-iQ
 Suite: stable
 Version: 1.0
 Codename: iphoneos
-Date: Sat, 23 May 2026 00:07:15 GMT
+Date: Sat, 23 May 2026 00:20:31 GMT
 Architectures: iphoneos-arm iphoneos-arm64
 Components: main
 Description: An advanced iOS jailbreak package source featuring auto tapping, touch recording, OCR-driven actions, and app-specific automation for Sileo, Zebra, and Cydia.
 Maintainer: DaRwin iQ <lldrwll@gmail.com>
 MD5Sum:
- 0c04a328babc7938dfe33d382528e3b6             2627 Packages
- a6631fd7742e6701cf60749bd7f47524             1505 Packages.gz
- 8514c508b1745a5eb91eaca1068da50c             1552 Packages.bz2
- 22e8252528e8566ce15c7bd0d10f5554             1568 Packages.xz
+ d41d8cd98f00b204e9800998ecf8427e                0 Packages
+ 1780d0f18915a213471653605f162a28               29 Packages.gz
+ 4059d198768f9f8dc9372dc1c54bc3c3               14 Packages.bz2
+ 8dc5aea5b03dff8595f096f9e368e888               32 Packages.xz
 SHA1:
- 21cbbb0d25cb86b80b873ee2c1199723273a7be5             2627 Packages
- ae91f2d5e006fa5393730bd0ee00a85b10e24062             1505 Packages.gz
- b614e92e2a381ae358835d73454d98c1ad11e9b2             1552 Packages.bz2
- a4ea3407a620c2b37c5ef955d5d230997e6b49cc             1568 Packages.xz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709                0 Packages
+ 3c60eea0ff8672ac2c41ae37222ce8095c5d76ab               29 Packages.gz
+ 64a543afbb5f4bf728636bdcbbe7a2ed0804adc2               14 Packages.bz2
+ 9746882f4236fa1c3a8f86be2f1d9c46680c0b10               32 Packages.xz
 SHA256:
- bdb7f1665aee8868f34dd16f880cddcd97c7f6fff3565f477dba74135343d6a8             2627 Packages
- 8d0983c60b2f73fda566afad84eb9f5a50142233232f3622eb681dec7d0aa574             1505 Packages.gz
- f81912bb56574bc1d25c92ec175bdfbee9951bb6b17936f1c6fd0ffb45399156             1552 Packages.bz2
- 0302adb0f3cb02a49f4cc908a064e02a11ee482c132b0c2fda6931ede86dbc6e             1568 Packages.xz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 Packages
+ 91edb188e6f0d8a6ff7eabc420436b0a80a3282a7df083c847e3187015892226               29 Packages.gz
+ d3dda84eb03b9738d118eb2be78e246106900493c0ae07819ad60815134a8058               14 Packages.bz2
+ 0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275               32 Packages.xz
