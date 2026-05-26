@@ -1,0 +1,45 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "headerImage": "https://darwin-iq.github.io/assets/images/repo-banner.png",
+  "tintColor": "#007AFF",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "Screenshots"
+        },
+        {
+          "class": "DepictionScreenshotsView",
+          "itemCornerRadius": 18,
+          "itemSize": "{160, 320}",
+          "screenshots": [
+            {
+              "url": "https://darwin-iq.github.io/assets/IMG_0572.jpeg",
+              "accessibilityText": "Auto Touch Click screenshot 1"
+            },
+            {
+              "url": "https://darwin-iq.github.io/assets/IMG_0573.jpeg",
+              "accessibilityText": "Auto Touch Click screenshot 2"
+            },
+            {
+              "url": "https://darwin-iq.github.io/assets/IMG_0574.jpeg",
+              "accessibilityText": "Auto Touch Click screenshot 3"
+            },
+            {
+              "url": "https://darwin-iq.github.io/assets/IMG_0575.jpeg",
+              "accessibilityText": "Auto Touch Click screenshot 4"
+            }
+          ]
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "# Auto Touch Click ⚡\n\nAuto Touch Click is an iOS automation tweak built to record, replay, and manage touch actions through a clean control interface and stable runtime behavior.\n\nIt is designed for repetitive interaction testing, workflow automation, UI behavior checks, and controlled device-side automation.\n\nThe project focuses on reliability, smooth execution, and practical control over touch sequences without unnecessary complexity.\n\n## Overview\n\nAuto Touch Click allows users to create automated touch workflows directly on-device.  \nRecorded actions can be replayed with consistent timing, making it useful for testing repeated UI flows, reducing manual interaction, and validating touch-based behavior across different scenarios.\n\nThe tweak includes a lightweight overlay, recording controls, playback management, and safeguards for cleaner execution during active sessions.\n\n## Features ✨\n\n- Record touch interactions directly from the screen\n- Replay saved touch sequences with controlled timing\n- Floating overlay for quick access and session control\n- Start, stop, pause, and resume automation\n- Runtime-safe design with cleanup handling\n- Stable behavior across active sessions\n- Smooth performance with minimal interruption\n- Suitable for testing, automation, and repeated UI workflows\n\n## Use Cases 🧪\n\n- Repetitive touch testing\n- UI workflow validation\n- Automation of repeated actions\n- Touch sequence recording\n- Internal QA and debugging\n- Accessibility-style interaction assistance"
+        }
+      ]
+    }
+  ]
+}
