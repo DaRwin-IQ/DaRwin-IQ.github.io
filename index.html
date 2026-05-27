@@ -324,38 +324,6 @@
     .btn-zebra .btn-prefix  { color: #ffe0a0; }
     .btn-cydia .btn-prefix  { color: #c0ffc0; }
 
-    /* ────────────────── STATS BAR ────────────────── */
-    .stats-bar {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 28px 24px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      margin-top: 40px;
-      background: var(--dim);
-      flex-wrap: wrap;
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-value {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: -0.02em;
-    }
-
-    .stat-label {
-      font-size: 10px;
-      color: var(--gray5);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-
     /* ────────────────── SECTION ────────────────── */
     section {
       max-width: 900px;
@@ -640,7 +608,6 @@
       .topbar { padding: 0 14px; }
       .terminal-body { padding: 20px 16px 24px; }
       .ascii-logo { font-size: 7px; }
-      .stats-bar { gap: 24px; }
       .add-buttons { gap: 8px; }
       .tweaks-grid { grid-template-columns: 1fr; }
       section { padding: 60px 16px; }
@@ -698,7 +665,8 @@
         <div class="output-line highlight">  Repository Name    :  DaRwin-iQ</div>
         <div class="output-line">  Repository URL     :  https://darwin-iq.github.io/</div>
         <div class="output-line">  Latest Package     :  AUTO CLICKER / TOUCH</div>
-        <div class="output-line">  Architecture       :  iphoneos-arm64</div>
+        <div class="output-line">  Architecture       :  arm64 / arm64e</div>
+        <div class="output-line">  Jailbreak Support  :  Rootful · Rootless · Roothide</div>
         <div class="output-line">  Supported PM       :  Sileo · Zebra · Cydia</div>
         <div class="output-line dim">──────────────────────────────────────────────</div>
         <div class="spacer-sm"></div>
@@ -735,26 +703,6 @@
         </div>
 
       </div>
-    </div>
-  </div>
-
-  <!-- STATS -->
-  <div class="stats-bar fade-in delay-2">
-    <div class="stat-item">
-      <div class="stat-value" id="cnt-pkgs">—</div>
-      <div class="stat-label">Packages</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value">ARM64</div>
-      <div class="stat-label">Architecture</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value">iOS 15+</div>
-      <div class="stat-label">Supported</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value">FREE</div>
-      <div class="stat-label">Base Access</div>
     </div>
   </div>
 
@@ -836,18 +784,16 @@
       {
         id: 'com.darwiniq.autoclicker',
         name: 'AUTO CLICKER / TOUCH',
-        desc: 'Advanced iOS automation tweak for jailbreak devices with auto tapping, touch recording, OCR-driven actions, and app-specific targeting.',
-        version: '1.0.0',
+        desc: 'Advanced iOS automation tweak with Rootful, Rootless, and Roothide jailbreak support for arm64-arm64e devices.',
+        version: '1.0.1',
         price: 'Free',
         details: 'depictions/?package=com.darwiniq.autoclicker&v=7',
-        download: 'debs/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb'
+        download: 'debs/com.darwiniq.autoclicker_1.0.1_iphoneos-arm64.deb'
       },
     ];
 
     /* ── RENDER PACKAGES ── */
     const grid = document.getElementById('tweaks-grid');
-    document.getElementById('cnt-pkgs').textContent = packages.length;
-
     packages.forEach((pkg, i) => {
       const card = document.createElement('div');
       card.className = 'tweak-card fade-in';

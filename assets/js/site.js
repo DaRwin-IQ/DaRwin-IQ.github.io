@@ -3,7 +3,7 @@
     name: "DaRwin-iQ",
     suite: "stable",
     url: "",
-    description: "A polished iOS package source for Sileo, Zebra, and Cydia."
+    description: "A polished iOS package source with Rootful, Rootless, and Roothide support for arm64-arm64e devices."
   };
 
   function repoRoot() {
