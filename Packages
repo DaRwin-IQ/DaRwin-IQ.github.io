@@ -32,7 +32,7 @@ Depends: firmware (>= 15.0), ellekit | mobilesubstrate | org.coolstar.libhooker 
 Description: Roothide build of AUTO CLICKER / TOUCH for recording, replaying, and managing touch actions.
 Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker.roothide&v=7
 SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker.roothide/depiction.json
-Icon: https://darwin-iq.github.io/CydiaIcon.png
+Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.roothide.png
 Filename: debs/com.darwiniq.autoclicker.roothide_1.0.1_iphoneos-arm64e.deb
 Size: 1283358
 MD5sum: 8fc3a294c5f70b46c89b156e3baa5344
