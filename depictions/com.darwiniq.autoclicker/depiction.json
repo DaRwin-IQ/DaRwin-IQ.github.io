@@ -40,6 +40,16 @@
           "markdown": "# Auto Touch Click ⚡\n\nAuto Touch Click is an iOS automation tweak built to record, replay, and manage touch actions through a clean control interface and stable runtime behavior.\n\nIt is designed for repetitive interaction testing, workflow automation, UI behavior checks, and controlled device-side automation.\n\nThe project focuses on reliability, smooth execution, and practical control over touch sequences without unnecessary complexity.\n\n## Overview\n\nAuto Touch Click allows users to create automated touch workflows directly on-device.  \nRecorded actions can be replayed with consistent timing, making it useful for testing repeated UI flows, reducing manual interaction, and validating touch-based behavior across different scenarios.\n\nThe tweak includes a lightweight overlay, recording controls, playback management, and safeguards for cleaner execution during active sessions.\n\n## Features ✨\n\n- Record touch interactions directly from the screen\n- Replay saved touch sequences with controlled timing\n- Floating overlay for quick access and session control\n- Start, stop, pause, and resume automation\n- Runtime-safe design with cleanup handling\n- Stable behavior across active sessions\n- Smooth performance with minimal interruption\n- Suitable for testing, automation, and repeated UI workflows\n\n## Use Cases 🧪\n\n- Repetitive touch testing\n- UI workflow validation\n- Automation of repeated actions\n- Touch sequence recording\n- Internal QA and debugging\n- Accessibility-style interaction assistance"
         }
       ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "# Changelog\n\n## Version 1.0.1 — Arabic Language Support\n\n### Added\n- Added Arabic language support.\n- Added Arabic text improvements for better readability.\n- Improved package presentation for Arabic-speaking users.\n\n### Arabic\n- تمت إضافة دعم اللغة العربية.\n- تم تحسين النصوص لتكون أوضح وأسهل للمستخدم العربي.\n- تم تحسين عرض معلومات الأداة داخل صفحة الحزمة.\n\n---\n\n## Version 1.0.0 — Initial Release\n\n### Added\n- Initial release of Auto Touch Click.\n- Added touch recording from the device screen.\n- Added touch replay system with controlled timing.\n- Added floating control overlay.\n- Added start, stop, pause, and resume controls.\n- Added basic session management and cleanup handling.\n- Added support for repetitive touch automation and UI workflow testing."
+        }
+      ]
     }
   ]
 }
