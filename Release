@@ -3,23 +3,23 @@ Label: DaRwin-iQ
 Suite: stable
 Version: 1.0
 Codename: iphoneos
-Date: Wed, 27 May 2026 22:55:29 GMT
+Date: Wed, 27 May 2026 23:25:39 GMT
 Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: An advanced iOS jailbreak package source with Rootful, Rootless, and Roothide support for arm64-arm64e devices.
 Maintainer: DaRwin iQ <lldrwll@gmail.com>
 MD5Sum:
  d1211e7ce04266f629a184668ce4a4b9             3764 Packages
- 32d9e59d212db6747a5a37fd9c5f432f             1024 Packages.gz
+ ae162d3495baf2ac560dbe5513be9a6a             1024 Packages.gz
  f5eb90f4fa69c9018531d9b43af5929c             1214 Packages.bz2
  f5ba44cf36bfa7f361b70ee94900308f             1052 Packages.xz
 SHA1:
  d287c3b674ebbd68a1fd64dc804fcc34c3dd9968             3764 Packages
- 54285e8b358f414d5f9bdf50d4f356a9765fa43c             1024 Packages.gz
+ ee6cf90644a0f6f9985dc1eac60cc107356a3c03             1024 Packages.gz
  6f2d1234ac801a78cb7d0a4d139db7720e2932ac             1214 Packages.bz2
  659662452ff3ddd8c746406d914f6e9c9866c460             1052 Packages.xz
 SHA256:
  75105411f97ec9ae8238f878f83d4d59b5e36b1c7edbf8f4328961a746d6c00a             3764 Packages
- e19776990eef4a91b6cf06e341939028dc090625872a83e09b516c2d6d000619             1024 Packages.gz
+ f503ba1d50dbb67fa42afdea8175c05b242d4ab7b77f1b12440ba932adeb466e             1024 Packages.gz
  1257a33a0f004c55478ffebdb1e4fe4e1a49bb2526478ec87e53ac044faf6ef5             1214 Packages.bz2
  aaa86f3a0e4f670c8a044d944364000f6966ee56720037c4579d50869bfc0070             1052 Packages.xz
