@@ -20,6 +20,26 @@ SHA1: d4d8d10e60abdaa755308f8606d69c9f9dcbb16a
 SHA256: ddb990b54e15ccf22d1f1f12d883625a50c5c08e22128a7f9aae97a63e551a72
 Installed-Size: 1928
 
+Package: com.darwiniq.autoclicker.roothide
+Name: AUTO CLICKER / TOUCH (Roothide)
+Version: 1.0.1
+Architecture: iphoneos-arm64e
+Maintainer: DarwinIQ
+Author: DarwinIQ
+Section: Tweaks
+Priority: optional
+Depends: firmware (>= 15.0), ellekit | mobilesubstrate | org.coolstar.libhooker | libhooker
+Description: Roothide build of AUTO CLICKER / TOUCH for recording, replaying, and managing touch actions.
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker.roothide&v=7
+SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker.roothide/depiction.json
+Icon: https://darwin-iq.github.io/CydiaIcon.png
+Filename: debs/com.darwiniq.autoclicker.roothide_1.0.1_iphoneos-arm64e.deb
+Size: 1283358
+MD5sum: 8fc3a294c5f70b46c89b156e3baa5344
+SHA1: 46d1ee97f16aa0042689678f42555198da147865
+SHA256: 32afce57e239b0435cc4448e3eba803a29dd6baff04f0210079f02f6543548e2
+Installed-Size: 2044
+
 Package: com.darwiniq.autoclicker
 Name: AUTO CLICKER / TOUCH
 Version: 1.0.0

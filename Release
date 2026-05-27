@@ -3,23 +3,23 @@ Label: DaRwin-iQ
 Suite: stable
 Version: 1.0
 Codename: iphoneos
-Date: Wed, 27 May 2026 17:30:49 GMT
+Date: Wed, 27 May 2026 22:50:11 GMT
 Architectures: iphoneos-arm iphoneos-arm64
 Components: main
 Description: An advanced iOS jailbreak package source with Rootful, Rootless, and Roothide support for arm64-arm64e devices.
 Maintainer: DaRwin iQ <lldrwll@gmail.com>
 MD5Sum:
- 7d1a2c985a8ce0c366579a5b8311fb84             2801 Packages
- c50f9617f941546444ad3f6bece2d113              845 Packages.gz
- 373b01096c21528668421fab7d0699a8             1044 Packages.bz2
- 65131d11c24d765f291b8bfa88a49d14              884 Packages.xz
+ 05415dae0e3b65208c130aaeb76a6c23             3719 Packages
+ 8e8a4fd108ad6a0b0007c21bc41d16bd             1021 Packages.gz
+ 8a8a3e03cef208921ef7aee6b19b1457             1212 Packages.bz2
+ 4e2fef25be1bca477a6be46bc3a277ee             1048 Packages.xz
 SHA1:
- 648eb54063f564a6773babcf7577eb11fd787455             2801 Packages
- f163b466f28616bfb14c36e378cb5a70428c6ed2              845 Packages.gz
- 8908fd7c8626a74d82542b13fa50119c0f507385             1044 Packages.bz2
- 434b1e496f986038f860f324b64c899a58641dc1              884 Packages.xz
+ 7172a4ceba987e65f23edca6f609f1fddccba80b             3719 Packages
+ a8b5ccb1e1fcfba1600c358c3560384fbc274161             1021 Packages.gz
+ ff4fabc6eb278ffb3b611f96f4194cec71109d60             1212 Packages.bz2
+ 247e418e1b66244075ba93910e95178280a7a65c             1048 Packages.xz
 SHA256:
- e9cfb17b92e5d0b6d18187888960e161952d31ca05cbd1f9d241c20afc105b88             2801 Packages
- bb926c5c32fb96fbe39a00cf734add6c8226bbe9d533e80e7a76fda9df47b593              845 Packages.gz
- 0d033778cbba776cd99d5c04a7962bf79b8a11d229ea9ac98259c512350d0d30             1044 Packages.bz2
- 754ae921fc37656841112dd81bd00cb69102608cbc7a8a38457cefcb2ea33cd3              884 Packages.xz
+ 701f242086bb9daf90534ea108a2c5ab3de8c9f73184a4768d785ccd6efb14f4             3719 Packages
+ a2ca5478af775a1641dd724ebaab0e1276081d939309d26ca6111ff12b5f5c00             1021 Packages.gz
+ 69888c5fcb81b2853cba04f7d841f105ef445c3f4b42310163c3d917be376d43             1212 Packages.bz2
+ b6234c1d4040af26db1a6c905c02dfa7adce69e41e76bbea275ed495d855508e             1048 Packages.xz
