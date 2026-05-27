@@ -4,7 +4,7 @@ Suite: stable
 Version: 1.0
 Codename: iphoneos
 Date: Wed, 27 May 2026 22:55:29 GMT
-Architectures: iphoneos-arm iphoneos-arm64
+Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: An advanced iOS jailbreak package source with Rootful, Rootless, and Roothide support for arm64-arm64e devices.
 Maintainer: DaRwin iQ <lldrwll@gmail.com>
