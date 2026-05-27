@@ -1,3 +1,25 @@
+Package: com.darwiniq.autoclicker.rootful
+Name: AUTO CLICKER / TOUCH (Rootful)
+Version: 1.0.0
+Architecture: iphoneos-arm
+Maintainer: DarwinIQ
+Author: DarwinIQ
+Section: Tweaks
+Priority: optional
+Depends: firmware (>= 14.0), ellekit | mobilesubstrate | org.coolstar.libhooker | libhooker
+Conflicts: com.darwiniq.autoclicker
+Replaces: com.darwiniq.autoclicker
+Description: Rootful iOS automation tweak built to record, replay, and manage touch actions safely and efficiently.
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker.rootful&v=7
+SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker/depiction1.json
+Icon: https://darwin-iq.github.io/CydiaIcon.png
+Filename: debs/com.darwiniq.autoclicker.rootful_1.0.0_iphoneos-arm.deb
+Size: 1259798
+MD5sum: 21a4c46f055db23439aeff67184aa186
+SHA1: d4d8d10e60abdaa755308f8606d69c9f9dcbb16a
+SHA256: ddb990b54e15ccf22d1f1f12d883625a50c5c08e22128a7f9aae97a63e551a72
+Installed-Size: 1928
+
 Package: com.darwiniq.autoclicker
 Name: AUTO CLICKER / TOUCH
 Version: 1.0.0
@@ -6,15 +28,35 @@ Maintainer: DarwinIQ
 Author: DarwinIQ
 Section: Tweaks
 Priority: optional
-Depends: firmware (>= 15.0), ellekit | mobilesubstrate
+Depends: firmware (>= 14.0), ellekit | mobilesubstrate | org.coolstar.libhooker | libhooker
 Description: An iOS automation tweak built to record, replay, and manage touch actions safely and efficiently.
 Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker&v=7
 SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker/depiction.json
 Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.png
 Filename: debs/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb
-Size: 1260486
-MD5sum: 569b14743482f0c9b0f1cba46c0ef57c
-SHA1: 8e58db151e79f15bd103da486c33da55226cde64
-SHA256: aca8c506aa3678f625eb390ad71c559c8c0a8e404c69dc452b95956f64aa1471
-Installed-Size: 1648
+Size: 1260596
+MD5sum: a78b46a3c3fb354d223e97b5aa41ce35
+SHA1: 204b43bc12a214f06b5752c1e1efb3808e7167f3
+SHA256: 59fdb994e9b2d620387036b04d11207b99d741d4a2067e02b25fd86fb4d5fe89
+Installed-Size: 1928
+
+Package: com.darwiniq.autoclicker
+Name: AUTO CLICKER / TOUCH
+Version: 1.0.1
+Architecture: iphoneos-arm64
+Maintainer: DarwinIQ
+Author: DarwinIQ
+Section: Tweaks
+Priority: optional
+Depends: firmware (>= 14.0), ellekit | mobilesubstrate | org.coolstar.libhooker | libhooker
+Description: An iOS automation tweak built to record, replay, and manage touch actions safely and efficiently.
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker&v=7
+SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker/depiction.json
+Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.png
+Filename: debs/com.darwiniq.autoclicker_1.0.1_iphoneos-arm64.deb
+Size: 1282386
+MD5sum: dd4a4bad12c1358f5cfd2d956a96352f
+SHA1: 041e71dab7c85bebebd7b2d8cfb89fe6a10e76bc
+SHA256: 22a69f34aed37d984c65d4b838d4e7d75bef0fc145360b09fdfa18660cf0234b
+Installed-Size: 2044
 
