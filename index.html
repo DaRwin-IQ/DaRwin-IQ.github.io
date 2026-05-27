@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DaRwin-iQ — Source</title>
+  <title>DaRwiN-IQ — Source</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -226,16 +226,17 @@
 
     .output-line.dim { color: var(--gray4); }
 
-    /* ── LOGO ASCII ── */
-    .ascii-logo {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: clamp(8px, 1.6vw, 13px);
-      line-height: 1.25;
+    /* ── BRAND LOGO ── */
+    .brand-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(38px, 8vw, 68px);
+      line-height: 1;
       color: var(--white);
-      letter-spacing: 0.05em;
+      font-weight: 800;
+      letter-spacing: 0;
       margin: 20px 0 28px;
-      white-space: pre;
-      text-shadow: 0 0 20px rgba(255,255,255,0.15);
+      white-space: nowrap;
+      text-shadow: none;
     }
 
     .spacer { height: 14px; }
@@ -607,7 +608,7 @@
     @media (max-width: 600px) {
       .topbar { padding: 0 14px; }
       .terminal-body { padding: 20px 16px 24px; }
-      .ascii-logo { font-size: 7px; }
+      .brand-logo { font-size: clamp(34px, 12vw, 46px); }
       .add-buttons { gap: 8px; }
       .tweaks-grid { grid-template-columns: 1fr; }
       section { padding: 60px 16px; }
@@ -640,7 +641,7 @@
           <span class="dot dot-yellow"></span>
           <span class="dot dot-green"></span>
         </div>
-        <span class="terminal-tab">~/DaRwin-iQ — zsh</span>
+        <span class="terminal-tab">~/DaRwiN-IQ — zsh</span>
       </div>
 
       <div class="terminal-body">
@@ -653,16 +654,11 @@
 
         <div class="spacer-sm"></div>
 
-        <div class="ascii-logo" id="ascii-logo">
- ____       ____          _         ___ ___  
-|  _ \  __ |  _ \__      (_)_ __   |_ _/ _ \ 
-| | | |/ _` | |_) \ \ /\ / / '_ \  | | | | |
-| |_| | (_| |  _ < \ V  V /| | | | | | |_| |
-|____/ \__,_|_| \_\ \_/\_/ |_| |_||___\__\_\</div>
+        <div class="brand-logo" id="brand-logo">DaRwiN-IQ</div>
 
         <div class="output-line dim">──────────────────────────────────────────────</div>
         <div class="spacer-sm"></div>
-        <div class="output-line highlight">  Repository Name    :  DaRwin-iQ</div>
+        <div class="output-line highlight">  Repository Name    :  DaRwiN-IQ</div>
         <div class="output-line">  Repository URL     :  https://darwin-iq.github.io/</div>
         <div class="output-line">  Latest Package     :  AUTO CLICKER / TOUCH</div>
         <div class="output-line">  Architecture       :  arm64 / arm64e</div>
@@ -769,9 +765,9 @@
       <span class="prompt-arrow">❯</span>
       <span style="color:var(--gray6); margin-left:8px;">exit 0</span>
     </div>
-    <div class="footer-name">DaRwin-iQ</div>
+    <div class="footer-name">DaRwiN-IQ</div>
     <div class="footer-copy">
-      © 2026 DaRwin-iQ Repository · Built for the jailbreak community<br/>
+      © 2026 DaRwiN-IQ Repository · Built for the jailbreak community<br/>
       <span style="color:var(--gray4)">https://darwin-iq.github.io/</span>
     </div>
   </footer>
