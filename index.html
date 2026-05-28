@@ -652,8 +652,8 @@
         <div class="output-line highlight">  <span class="key">Repository Name</span><span class="sep">:</span><span class="val">DaRwiN-IQ</span></div>
         <div class="output-line">  <span class="key">Repository URL</span> <span class="sep">:</span><span class="val">https://darwin-iq.github.io/</span></div>
         <div class="output-line">  <span class="key">Latest Package</span> <span class="sep">:</span><span class="val">AUTO CLICKER / TOUCH</span></div>
-        <div class="output-line">  <span class="key">Architecture</span>   <span class="sep">:</span><span class="val">arm64 / arm64e</span></div>
-        <div class="output-line">  <span class="key">Jailbreak Support</span><span class="sep">:</span><span class="val">Rootful · Rootless · Roothide</span></div>
+        <div class="output-line">  Architecture       :  <span class="c-arm64">arm64</span> / <span class="c-arm64e">arm64e</span></div>
+        <div class="output-line">  Jailbreak Support  :  <span class="c-rootful">Rootful</span> · <span class="c-rootless">Rootless</span> · <span class="c-roothide">Roothide</span></div>
         <div class="output-line">  <span class="key">Supported PM</span>   <span class="sep">:</span><span class="val">Sileo · Zebra · Cydia</span></div>
         <div class="output-line dim">──────────────────────────────────────────────</div>
         <div class="spacer-sm"></div>
@@ -829,6 +829,20 @@
           e.target.style.opacity = '1';
           e.target.style.transform = 'translateY(0)';
         }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.tweak-card, .step').forEach(el => {
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>
+t>
+</body>
+</html>
+
       });
     }, { threshold: 0.1 });
 
