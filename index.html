@@ -262,7 +262,7 @@
     .add-buttons {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       margin-top: 28px;
       padding-top: 24px;
       border-top: 1px solid var(--border);
@@ -272,58 +272,77 @@
       display: flex;
       align-items: center;
       gap: 0;
-      background: transparent;
-      border: 1px solid var(--gray3);
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 0;
       cursor: pointer;
       text-decoration: none;
       overflow: hidden;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       font-family: 'JetBrains Mono', monospace;
+      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
     }
 
     .add-btn:hover {
-      border-color: var(--silver);
-      box-shadow: 0 0 20px rgba(255,255,255,0.06);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border-color: rgba(255,255,255,0.3);
     }
-
-    .add-btn:active { transform: translateY(0); }
 
     .btn-prefix {
-      background: var(--gray1);
-      padding: 12px 14px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 14px 16px;
       font-size: 12px;
-      color: var(--gray5);
-      border-right: 1px solid var(--gray3);
+      color: rgba(255, 255, 255, 0.7);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
       white-space: nowrap;
-      transition: background 0.2s;
     }
 
-    .add-btn:hover .btn-prefix { background: var(--gray2); }
-
     .btn-label {
-      padding: 12px 18px;
-      font-size: 12px;
-      color: var(--white);
-      letter-spacing: 0.06em;
+      padding: 14px 20px;
+      font-size: 13px;
+      color: var(--pure);
+      font-weight: 600;
+      letter-spacing: 0.04em;
       flex: 1;
     }
 
-    .btn-icon {
-      padding: 12px 14px;
-      font-size: 14px;
-      color: var(--gray5);
-      transition: color 0.2s;
+    .btn-icon-img {
+      width: 28px;
+      height: 28px;
+      margin-right: 16px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .add-btn:hover .btn-icon { color: var(--white); }
+    /* ── SILEO specific ── */
+    .btn-sileo {
+      background: linear-gradient(90deg, #52479a, #3e34a7);
+    }
+    .btn-sileo:hover {
+      background: linear-gradient(90deg, #6257aa, #4e44b7);
+      box-shadow: 0 10px 30px rgba(82, 71, 154, 0.4);
+    }
 
-    /* ── SILEO specific color ── */
-    .btn-sileo .btn-prefix { color: #a0c4ff; }
-    .btn-zebra .btn-prefix  { color: #ffe0a0; }
-    .btn-cydia .btn-prefix  { color: #c0ffc0; }
+    /* ── ZEBRA specific ── */
+    .btn-zebra {
+      background: linear-gradient(90deg, #a48162, #8a6d5c);
+    }
+    .btn-zebra:hover {
+      background: linear-gradient(90deg, #b49172, #9a7d6c);
+      box-shadow: 0 10px 30px rgba(164, 129, 98, 0.4);
+    }
+
+    /* ── CYDIA specific ── */
+    .btn-cydia {
+      background: linear-gradient(90deg, #714d3a, #5a3c2e);
+    }
+    .btn-cydia:hover {
+      background: linear-gradient(90deg, #815d4a, #6a4c3e);
+      box-shadow: 0 10px 30px rgba(113, 77, 58, 0.4);
+    }
 
     /* ────────────────── SECTION ────────────────── */
     section {
