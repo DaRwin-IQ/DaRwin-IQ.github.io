@@ -278,7 +278,7 @@
       text-decoration: none;
       overflow: hidden;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      font-family: 'JetBrains Mono', monospace;
+      font-family: "JetBrains Mono", monospace;
       border: 1px solid rgba(255,255,255,0.1);
       position: relative;
     }
@@ -289,69 +289,34 @@
       border-color: rgba(255,255,255,0.3);
     }
 
-    .btn-prefix {
-      background: rgba(0, 0, 0, 0.2);
-      padding: 14px 16px;
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.7);
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
-      white-space: nowrap;
-    }
-
     .btn-label {
-      padding: 14px 20px;
-      font-size: 13px;
+      padding: 16px 24px;
+      font-size: 14px;
       color: var(--pure);
       font-weight: 600;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       flex: 1;
+      text-align: left;
     }
 
     .btn-icon-img {
-      width: 32px;
-      height: 32px;
-      margin-right: 12px;
+      width: 34px;
+      height: 34px;
+      margin-right: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 7px;
+      border-radius: 8px;
       overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    .btn-icon-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .btn-icon-img img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* ── SILEO specific ── */
-    .btn-sileo {
-      background: linear-gradient(90deg, #1d4ed8, #6366f1);
-    }
-    .btn-sileo:hover {
-      background: linear-gradient(90deg, #2563eb, #818cf8);
-      box-shadow: 0 10px 30px rgba(29, 78, 216, 0.4);
-    }
-
-    /* ── ZEBRA specific ── */
-    .btn-zebra {
-      background: linear-gradient(90deg, #333333, #111111);
-    }
-    .btn-zebra:hover {
-      background: linear-gradient(90deg, #444444, #222222);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    /* ── CYDIA specific ── */
-    .btn-cydia {
-      background: linear-gradient(90deg, #8b4513, #5d2e0a);
-    }
-    .btn-cydia:hover {
-      background: linear-gradient(90deg, #a0522d, #703a12);
-      box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
-    }
-
-    /* ────────────────── SECTION ────────────────── */
+    .btn-sileo { background: linear-gradient(90deg, #2c67ff, #483dff); }
+    .btn-zebra { background: linear-gradient(90deg, #2d2d2d, #1a1a1a); }
+    .btn-cydia { background: linear-gradient(90deg, #6d4c3b, #4a3126); }
+/* ────────────────── SECTION ────────────────── */
     section {
       max-width: 900px;
       margin: 0 auto;
@@ -701,31 +666,19 @@
         </div>
 
         <div class="add-buttons fade-in delay-4">
-          <a class="add-btn btn-sileo"
-             href="sileo://source/https://darwin-iq.github.io/"
-             onclick="tryOpen(event,'sileo://source/https://darwin-iq.github.io/')">
+          <a class="add-btn btn-sileo" href="sileo://source/https://darwin-iq.github.io/" onclick="tryOpen(event,this.href)">
             <span class="btn-label">Add to Sileo</span>
-            <div class="btn-icon-img">
-              <img src="assets/images/sileo_icon.png" alt="Sileo">
-            </div>
+            <div class="btn-icon-img"><img src="assets/images/sileo_icon.png" alt="Sileo"></div>
           </a>
-          <a class="add-btn btn-zebra"
-             href="zbra://sources/add/https://darwin-iq.github.io/"
-             onclick="tryOpen(event,'zbra://sources/add/https://darwin-iq.github.io/')">
+          <a class="add-btn btn-zebra" href="zbra://sources/add/https://darwin-iq.github.io/" onclick="tryOpen(event,this.href)">
             <span class="btn-label">Add to Zebra</span>
-            <div class="btn-icon-img">
-              <img src="assets/images/zebra_icon.png" alt="Zebra">
-            </div>
+            <div class="btn-icon-img"><img src="assets/images/zebra_icon.png" alt="Zebra"></div>
           </a>
-          <a class="add-btn btn-cydia"
-             href="cydia://url/https://cydia.saurik.com/api/share#?source=https%3A%2F%2Fdarwin-iq.github.io%2F"
-             onclick="tryOpen(event,'cydia://url/https://cydia.saurik.com/api/share#?source=https%3A%2F%2Fdarwin-iq.github.io%2F')">
+          <a class="add-btn btn-cydia" href="cydia://url/https://cydia.saurik.com/api/share#?source=https%3A%2F%2Fdarwin-iq.github.io%2F" onclick="tryOpen(event,this.href)">
             <span class="btn-label">Add to Cydia</span>
-            <div class="btn-icon-img">
-              <img src="assets/images/cydia_icon.png" alt="Cydia">
-            </div>
+            <div class="btn-icon-img"><img src="assets/images/cydia_icon.png" alt="Cydia"></div>
           </a>
-        </div>
+        </div></div>
 
       </div>
     </div>
