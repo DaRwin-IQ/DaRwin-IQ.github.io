@@ -13,7 +13,7 @@ Description: Rootful iOS automation tweak built to record, replay, and manage to
 Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker.rootful&v=7
 SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker/depiction1.json
 Icon: https://darwin-iq.github.io/CydiaIcon.png
-Filename: debs/com.darwiniq.autoclicker.rootful_1.0.0_iphoneos-arm.deb
+Filename: https://github.com/DaRwin-IQ/DaRwin-IQ.github.io/releases/download/v1.0.0/com.darwiniq.autoclicker.rootful_1.0.0_iphoneos-arm.deb
 Size: 1259798
 MD5sum: 21a4c46f055db23439aeff67184aa186
 SHA1: d4d8d10e60abdaa755308f8606d69c9f9dcbb16a
@@ -33,7 +33,7 @@ Description: Roothide build of AUTO CLICKER / TOUCH for recording, replaying, an
 Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker.roothide&v=7
 SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker.roothide/depiction.json
 Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.roothide.png
-Filename: debs/com.darwiniq.autoclicker.roothide_1.0.1_iphoneos-arm64e.deb
+Filename: https://github.com/DaRwin-IQ/DaRwin-IQ.github.io/releases/download/v1.0.1/com.darwiniq.autoclicker.roothide_1.0.1_iphoneos-arm64e.deb
 Size: 1283358
 MD5sum: 8fc3a294c5f70b46c89b156e3baa5344
 SHA1: 46d1ee97f16aa0042689678f42555198da147865
@@ -53,7 +53,7 @@ Description: An iOS automation tweak built to record, replay, and manage touch a
 Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker&v=7
 SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker/depiction.json
 Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.png
-Filename: debs/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb
+Filename: https://github.com/DaRwin-IQ/DaRwin-IQ.github.io/releases/download/v1.0.0/com.darwiniq.autoclicker_1.0.0_iphoneos-arm64.deb
 Size: 1260596
 MD5sum: a78b46a3c3fb354d223e97b5aa41ce35
 SHA1: 204b43bc12a214f06b5752c1e1efb3808e7167f3
@@ -73,7 +73,7 @@ Description: An iOS automation tweak built to record, replay, and manage touch a
 Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker&v=7
 SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker/depiction.json
 Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.png
-Filename: debs/com.darwiniq.autoclicker_1.0.1_iphoneos-arm64.deb
+Filename: https://github.com/DaRwin-IQ/DaRwin-IQ.github.io/releases/download/v1.0.1/com.darwiniq.autoclicker_1.0.1_iphoneos-arm64.deb
 Size: 1282386
 MD5sum: dd4a4bad12c1358f5cfd2d956a96352f
 SHA1: 041e71dab7c85bebebd7b2d8cfb89fe6a10e76bc

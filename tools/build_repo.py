@@ -120,6 +120,14 @@ def normalize_fields(root: Path, deb: Path, fields: dict, config: dict) -> dict:
     out["SHA1"] = digest(deb, "sha1")
     out["SHA256"] = digest(deb, "sha256")
 
+    # Override Filename if github_releases_repo is provided
+    gh_repo = config.get("github_releases_repo")
+    if gh_repo:
+        version = out.get("Version", "1.0.0")
+        basename = deb.name
+        # format: https://github.com/User/Repo/releases/download/v1.0.0/package.deb
+        out["Filename"] = f"https://github.com/{gh_repo}/releases/download/v{version}/{basename}"
+
     base_url = repo_url(config)
     package_id = out.get("Package", "")
     if config.get("add_default_depictions", True) and base_url and package_id:

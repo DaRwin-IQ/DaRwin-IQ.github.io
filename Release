@@ -3,23 +3,23 @@ Label: DaRwin-iQ
 Suite: stable
 Version: 1.0
 Codename: iphoneos
-Date: Wed, 27 May 2026 23:25:39 GMT
+Date: Fri, 29 May 2026 23:45:05 GMT
 Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: An advanced iOS jailbreak package source with Rootful, Rootless, and Roothide support for arm64-arm64e devices.
 Maintainer: DaRwin iQ <lldrwll@gmail.com>
 MD5Sum:
- d1211e7ce04266f629a184668ce4a4b9             3764 Packages
- ae162d3495baf2ac560dbe5513be9a6a             1024 Packages.gz
- f5eb90f4fa69c9018531d9b43af5929c             1214 Packages.bz2
- f5ba44cf36bfa7f361b70ee94900308f             1052 Packages.xz
+ c359c25f4d749da19cf6831cae98d2b7             4040 Packages
+ 12dec8e0cf6a13fe5c94b8bc104ccb52             1070 Packages.gz
+ b940b5887166f3c1edfdd7950e8e1cd0             1264 Packages.bz2
+ b578ae68aba3b3d23205d5d0b5a69cc3             1084 Packages.xz
 SHA1:
- d287c3b674ebbd68a1fd64dc804fcc34c3dd9968             3764 Packages
- ee6cf90644a0f6f9985dc1eac60cc107356a3c03             1024 Packages.gz
- 6f2d1234ac801a78cb7d0a4d139db7720e2932ac             1214 Packages.bz2
- 659662452ff3ddd8c746406d914f6e9c9866c460             1052 Packages.xz
+ 27ecb1bd9d37584dfd82353a80eebefe0fc797c0             4040 Packages
+ acc9210b9bbfddb68c229b80572496efea9cd643             1070 Packages.gz
+ 7d7b17d2fd468117e55ebebc460330b1ac0936d5             1264 Packages.bz2
+ 6ec7496681fb3159084b8fa631771732b7a74650             1084 Packages.xz
 SHA256:
- 75105411f97ec9ae8238f878f83d4d59b5e36b1c7edbf8f4328961a746d6c00a             3764 Packages
- f503ba1d50dbb67fa42afdea8175c05b242d4ab7b77f1b12440ba932adeb466e             1024 Packages.gz
- 1257a33a0f004c55478ffebdb1e4fe4e1a49bb2526478ec87e53ac044faf6ef5             1214 Packages.bz2
- aaa86f3a0e4f670c8a044d944364000f6966ee56720037c4579d50869bfc0070             1052 Packages.xz
+ be6d925ffa8c591dffde5213125b94b0116b35bbf2457c9f5cc890c81a4ff9e7             4040 Packages
+ b018a3dcc6b88f348f319a2b1f5401cd3ceb7357af58155590627e7740eece9a             1070 Packages.gz
+ 5f97fbdd1ea6463c7e6a23bbdf197926a6cc467f52d13329a73fdbb838c29160             1264 Packages.bz2
+ abe5d529c0ef270d7afba11237255964fed72b286b70aa7545fdc729141d39f2             1084 Packages.xz

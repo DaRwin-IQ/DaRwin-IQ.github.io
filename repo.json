@@ -20,6 +20,7 @@
   },
   "default_section": "Tweaks",
   "add_default_depictions": true,
+  "github_releases_repo": "DaRwin-IQ/DaRwin-IQ.github.io",
   "links": {
     "sileo": true,
     "zebra": true,
