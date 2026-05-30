@@ -38,6 +38,36 @@
         {
           "class": "DepictionMarkdownView",
           "markdown": "# Auto Touch Click ⚡\n\nAuto Touch Click is an iOS automation tweak built to record, replay, and manage touch actions through a clean control interface and stable runtime behavior.\n\nIt is designed for repetitive interaction testing, workflow automation, UI behavior checks, and controlled device-side automation.\n\nThe project focuses on reliability, smooth execution, and practical control over touch sequences without unnecessary complexity.\n\n## Overview\n\nAuto Touch Click allows users to create automated touch workflows directly on-device.  \nRecorded actions can be replayed with consistent timing, making it useful for testing repeated UI flows, reducing manual interaction, and validating touch-based behavior across different scenarios.\n\nThe tweak includes a lightweight overlay, recording controls, playback management, and safeguards for cleaner execution during active sessions.\n\n## Features ✨\n\n- Record touch interactions directly from the screen\n- Replay saved touch sequences with controlled timing\n- Floating overlay for quick access and session control\n- Start, stop, pause, and resume automation\n- Runtime-safe design with cleanup handling\n- Stable behavior across active sessions\n- Smooth performance with minimal interruption\n- Suitable for testing, automation, and repeated UI workflows\n\n## Use Cases 🧪\n\n- Repetitive touch testing\n- UI workflow validation\n- Automation of repeated actions\n- Touch sequence recording\n- Internal QA and debugging\n- Accessibility-style interaction assistance"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Last updated",
+          "text": "2026-05-30"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "الإصدار",
+          "text": "1.0.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "الكاتب",
+          "text": "DaRwin-iQ"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "القسم",
+          "text": "Tweaks"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "License",
+          "text": "مجاني"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "التحميلات",
+          "text": "0"
         }
       ]
     }
