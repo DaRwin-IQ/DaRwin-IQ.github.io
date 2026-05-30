@@ -81,8 +81,9 @@ def validate(root: Path) -> list[str]:
                 if not package.get(field):
                     errors.append(f"{package.get('Package', 'unknown')} missing {field}")
             filename = package.get("Filename")
-            if filename and not (root / filename).exists():
-                errors.append(f"{filename} referenced in Packages but file is missing")
+            if filename and not (filename.startswith("http://") or filename.startswith("https://")):
+                if not (root / filename).exists():
+                    errors.append(f"{filename} referenced in Packages but file is missing")
 
     return errors
 
