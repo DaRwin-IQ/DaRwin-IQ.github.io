@@ -1,25 +1,25 @@
 Origin: DaRwin-iQ
 Label: DaRwin-iQ
-Suite: stable
+Suite: iphoneos
 Version: 1.0
 Codename: iphoneos
-Date: Fri, 29 May 2026 23:45:05 GMT
+Date: Mon, 01 Jun 2026 16:51:06 GMT
 Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: An advanced iOS jailbreak package source with Rootful, Rootless, and Roothide support for arm64-arm64e devices.
 Maintainer: DaRwin iQ <lldrwll@gmail.com>
 MD5Sum:
- c359c25f4d749da19cf6831cae98d2b7             4040 Packages
- 12dec8e0cf6a13fe5c94b8bc104ccb52             1070 Packages.gz
- b940b5887166f3c1edfdd7950e8e1cd0             1264 Packages.bz2
- b578ae68aba3b3d23205d5d0b5a69cc3             1084 Packages.xz
+ e6ded1bcd6c505d70ce43e5b44a6271d             3061 Packages
+ 1a194275cb81ab7f5c851bed356f1aee              950 Packages.gz
+ b001772653ba2950d8a63aae65199301             1135 Packages.bz2
+ d12ff7ea5297642fafbc5aada58ab6a5              980 Packages.xz
 SHA1:
- 27ecb1bd9d37584dfd82353a80eebefe0fc797c0             4040 Packages
- acc9210b9bbfddb68c229b80572496efea9cd643             1070 Packages.gz
- 7d7b17d2fd468117e55ebebc460330b1ac0936d5             1264 Packages.bz2
- 6ec7496681fb3159084b8fa631771732b7a74650             1084 Packages.xz
+ 07bc8e6f7f74731f59a5b6740b54fed1f42e18fe             3061 Packages
+ 45182b6ceb02c42be847a57a93873df50e8e4296              950 Packages.gz
+ f673c0b14414a6df402b17019a54f613a1600b29             1135 Packages.bz2
+ b569de4b9a8bde24d27cde1f149c846424e67f4c              980 Packages.xz
 SHA256:
- be6d925ffa8c591dffde5213125b94b0116b35bbf2457c9f5cc890c81a4ff9e7             4040 Packages
- b018a3dcc6b88f348f319a2b1f5401cd3ceb7357af58155590627e7740eece9a             1070 Packages.gz
- 5f97fbdd1ea6463c7e6a23bbdf197926a6cc467f52d13329a73fdbb838c29160             1264 Packages.bz2
- abe5d529c0ef270d7afba11237255964fed72b286b70aa7545fdc729141d39f2             1084 Packages.xz
+ 1dccaee85b6cb1f10ca986683711b5ad2462d24c025f29da301622a532e62068             3061 Packages
+ 20060562fbf716842cf4ff778007bbc197ed0f2c5aa5e410c01c27569d8356eb              950 Packages.gz
+ 59ae51e1576071b29752d3da509dcf05983b517f49d454ec4ff2ea07a1e708b0             1135 Packages.bz2
+ 228e2fe4f774f848a1a33b35ad09e39d7c15746d788921b611850f73abdad0c7              980 Packages.xz

@@ -201,7 +201,7 @@ def write_release(root: Path, config: dict, index_paths: list[Path]) -> None:
     release = [
         f"Origin: {origin}",
         f"Label: {origin}",
-        f"Suite: {config.get('suite', 'stable')}",
+        f"Suite: {config.get('suite', 'iphoneos')}",
         f"Version: {config.get('version', '1.0')}",
         f"Codename: {config.get('codename', 'iphoneos')}",
         f"Date: {now}",
