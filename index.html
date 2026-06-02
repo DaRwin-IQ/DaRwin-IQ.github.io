@@ -181,10 +181,27 @@
             opacity: 0.7;
         }
 
+        .tweak-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .tweak-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: #111;
+            border: 1px solid var(--border);
+            animation: floatIcon 3s ease-in-out infinite, glowIcon 2s ease-in-out infinite;
+            --glow-color: var(--accent);
+            object-fit: cover;
+        }
+
         .tweak-name {
             font-size: 1.4rem;
             font-weight: 700;
-            margin-bottom: 12px;
             color: white;
         }
 
