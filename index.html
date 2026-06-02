@@ -348,7 +348,10 @@
             card.className = 'card';
             card.innerHTML = `
                 <div class="tweak-id"># ${pkg.id}</div>
-                <div class="tweak-name">${pkg.name}</div>
+                <div class="tweak-header">
+                    <img class="tweak-icon" src="assets/package-icons/${pkg.id}.png" alt="">
+                    <div class="tweak-name">${pkg.name}</div>
+                </div>
                 <div class="tweak-desc">${pkg.desc}</div>
                 <div class="tweak-footer">
                     <span class="tweak-version">v${pkg.version}</span>
@@ -384,6 +387,25 @@
         }
 
         function showToast(msg) {
+            const t = document.getElementById('toast');
+            const tm = document.getElementById('toast-msg');
+            tm.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 2500);
+        }
+    </script>
+</body>
+</html>
+n showToast(msg) {
+            const t = document.getElementById('toast');
+            const tm = document.getElementById('toast-msg');
+            tm.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 2500);
+        }
+    </script>
+</body>
+</html>
             const t = document.getElementById('toast');
             const tm = document.getElementById('toast-msg');
             tm.textContent = msg;
