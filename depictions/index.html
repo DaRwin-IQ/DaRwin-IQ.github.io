@@ -1,564 +1,300 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080d0c">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Package - DaRwin-iQ</title>
-  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
-  <style>
-    :root {
-      --black: #0a0a0a;
-      --black2: #111111;
-      --black3: #161616;
-      --black4: #1c1c1c;
-      --gray1: #222222;
-      --gray2: #2e2e2e;
-      --gray3: #3a3a3a;
-      --gray4: #555555;
-      --gray5: #777777;
-      --gray6: #999999;
-      --silver: #b0b0b0;
-      --white: #e8e8e8;
-      --white2: #f0f0f0;
-      --pure: #ffffff;
-      --green: #4caf50;
-      --dim: rgba(255, 255, 255, 0.04);
-      --border: rgba(255, 255, 255, 0.07);
-      --border2: rgba(255, 255, 255, 0.12);
-      --border3: rgba(255, 255, 255, 0.16);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0, 0, 0, 0.08) 2px,
-        rgba(0, 0, 0, 0.08) 4px
-      );
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03), transparent 60%);
-      pointer-events: none;
-      z-index: 9998;
-      opacity: 0.6;
-    }
-
-    .topbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 42px;
-      background: var(--black2);
-      border-bottom: 1px solid var(--border2);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 18px;
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-    }
-
-    .topbar-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      min-width: 0;
-    }
-
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      flex: 0 0 auto;
-    }
-
-    .dot-red { background: #ff5f57; }
-    .dot-yellow { background: #ffbd2e; }
-    .dot-green { background: #28c840; }
-
-    .topbar-title {
-      margin-left: 14px;
-      color: var(--gray5);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .topbar-right {
-      color: var(--gray4);
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .status-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 8px var(--green);
-    }
-
-    .page {
-      padding: 72px 18px 40px;
-      max-width: 1160px;
-      margin: 0 auto;
-    }
-
-    .page-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 320px;
-      gap: 16px;
-      align-items: start;
-    }
-
-    .terminal-window,
-    .panel,
-    .meta-card {
-      background: var(--black2);
-      border: 1px solid var(--border2);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.04),
-        0 40px 120px rgba(0,0,0,0.8);
-    }
-
-    .terminal-header {
-      background: var(--black3);
-      border-bottom: 1px solid var(--border);
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .terminal-dots {
-      display: flex;
-      gap: 7px;
-    }
-
-    .terminal-tab {
-      font-size: 11px;
-      color: var(--gray5);
-      letter-spacing: 0.06em;
-      min-width: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .terminal-body {
-      padding: 22px;
-    }
-
-    .prompt {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-      color: var(--gray6);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .prompt-user { color: var(--silver); white-space: nowrap; }
-    .prompt-arrow { color: var(--gray4); }
-    .prompt-cmd { color: var(--white2); }
-
-    .ascii-logo {
-      margin: 22px 0 26px;
-      font-family: "Share Tech Mono", ui-monospace, monospace;
-      font-size: clamp(8px, 1.55vw, 13px);
-      line-height: 1.25;
-      color: var(--white);
-      white-space: pre;
-      text-shadow: 0 0 20px rgba(255,255,255,0.12);
-      overflow-x: auto;
-    }
-
-    .output-line {
-      font-size: 13px;
-      color: var(--gray6);
-      line-height: 1.8;
-    }
-
-    .output-line.highlight { color: var(--white); font-weight: 700; }
-    .output-line.dim { color: var(--gray4); }
-
-    .spacer { height: 12px; }
-    .spacer-sm { height: 8px; }
-
-    .cursor {
-      display: inline-block;
-      width: 8px;
-      height: 14px;
-      background: var(--white);
-      margin-left: 2px;
-      vertical-align: middle;
-      animation: cursor-blink 1s step-end infinite;
-    }
-
-    @keyframes cursor-blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    .section-title {
-      font-size: 10px;
-      color: var(--gray4);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .package-title {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      margin: 18px 0 14px;
-    }
-
-    .depiction-icon {
-      width: 68px;
-      height: 68px;
-      border-radius: 14px;
-      border: 1px solid var(--border3);
-      object-fit: cover;
-      flex: 0 0 auto;
-      background: var(--gray1);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
-    }
-
-    .package-icon {
-      width: 68px;
-      height: 68px;
-      border-radius: 10px;
-      border: 1px solid var(--border3);
-      object-fit: cover;
-      flex: 0 0 auto;
-      background: var(--gray1);
-    }
-
-    .package-name {
-      font-size: clamp(18px, 2.2vw, 26px);
-      font-weight: 800;
-      color: var(--white);
-      line-height: 1.05;
-    }
-
-    .package-id {
-      margin-top: 4px;
-      color: var(--gray5);
-      font-size: 12px;
-      word-break: break-all;
-    }
-
-    .details-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .detail-item {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--black3);
-      padding: 10px 12px;
-    }
-
-    .detail-label {
-      color: var(--gray4);
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .detail-value {
-      color: var(--white);
-      font-size: 12px;
-      line-height: 1.55;
-      word-break: break-word;
-    }
-
-    .desc-list {
-      margin-top: 18px;
-      display: grid;
-      gap: 8px;
-    }
-
-    .desc-line {
-      color: var(--gray6);
-      font-size: 13px;
-      line-height: 1.75;
-    }
-
-    .action-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-    }
-
-    .add-btn,
-    .ghost-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      border-radius: 8px;
-      padding: 0 14px;
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 0.06em;
-      font-weight: 700;
-      border: 1px solid var(--gray3);
-      transition: transform 0.15s, border-color 0.2s, background 0.2s;
-    }
-
-    .add-btn {
-      background: var(--gray1);
-      color: var(--white);
-    }
-
-    .ghost-btn {
-      background: transparent;
-      color: var(--gray6);
-    }
-
-    .add-btn:hover,
-    .ghost-btn:hover {
-      transform: translateY(-1px);
-      border-color: var(--silver);
-    }
-
-    .panel {
-      padding: 16px;
-    }
-
-    .panel h2 {
-      color: var(--white);
-      font-size: 14px;
-      letter-spacing: 0.08em;
-      margin-bottom: 14px;
-      text-transform: uppercase;
-    }
-
-    .meta-card + .meta-card {
-      margin-top: 12px;
-    }
-
-    .meta-card {
-      padding: 12px 14px;
-      background: var(--black3);
-    }
-
-    .meta-card dt {
-      color: var(--gray4);
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .meta-card dd {
-      color: var(--white);
-      font-size: 12px;
-      line-height: 1.6;
-      word-break: break-word;
-    }
-
-    .panel-footer {
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-      display: grid;
-      gap: 10px;
-    }
-
-    .panel-note {
-      color: var(--gray5);
-      font-size: 11px;
-      line-height: 1.7;
-    }
-
-    .panel-url {
-      font-size: 11px;
-      color: var(--silver);
-      background: var(--gray1);
-      padding: 10px 12px;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      word-break: break-all;
-    }
-
-    .empty {
-      padding: 34px 28px;
-      color: var(--gray5);
-      line-height: 1.8;
-    }
-
-    .empty h1 {
-      color: var(--white);
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .footer {
-      margin: 18px 0 0;
-      text-align: center;
-      color: var(--gray4);
-      font-size: 11px;
-      letter-spacing: 0.05em;
-    }
-
-    @media (max-width: 980px) {
-      .page-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .panel {
-        order: 0;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .topbar {
-        padding: 0 14px;
-      }
-
-      .topbar-title {
-        display: none;
-      }
-
-      .page {
-        padding: 62px 12px 28px;
-      }
-
-      .terminal-body {
-        padding: 18px 14px 18px;
-      }
-
-      .details-list {
-        grid-template-columns: 1fr;
-      }
-
-      .package-title {
-        align-items: flex-start;
-      }
-
-      .depiction-icon,
-      .package-icon {
-        width: 58px;
-        height: 58px;
-      }
-
-      .action-bar {
-        gap: 8px;
-      }
-
-      .add-btn,
-      .ghost-btn {
-        width: 100%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaRwiN-IQ — Package Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --accent: #00f3ff;
+            --accent-dim: rgba(0, 243, 255, 0.3);
+            --purple: #bc00ff;
+            --glass: rgba(20, 20, 30, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ── BACKGROUND EFFECTS ── */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(188, 0, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(0, 243, 255, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            padding: 60px 0;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            transition: 0.2s;
+        }
+        .back-btn:hover { opacity: 1; color: var(--accent); }
+
+        /* ── PACKAGE INFO ── */
+        .package-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .package-title-row {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .package-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            background: #111;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+        }
+
+        .package-name {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .package-id {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent);
+            opacity: 0.7;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .detail-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .detail-label {
+            font-size: 0.7rem;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .detail-val {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .description {
+            line-height: 1.7;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .action-bar {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-main {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background: var(--accent);
+            color: black;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .btn-main:hover {
+            box-shadow: 0 0 25px var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-sec {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .btn-sec:hover {
+            background: rgba(0, 243, 255, 0.1);
+        }
+
+        /* ── LOADING ── */
+        #loading {
+            padding: 100px;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            .details-grid { grid-template-columns: 1fr; }
+            .package-title-row { flex-direction: column; text-align: center; }
+            .action-bar { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="topbar-left">
-      <span class="dot dot-red"></span>
-      <span class="dot dot-yellow"></span>
-      <span class="dot dot-green"></span>
-      <span class="topbar-title">darwin-iq — package — 80x24</span>
+    <div class="grid-overlay"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1>DaRwiN-IQ</h1>
+            <a href="../" class="back-btn">< BACK HOME</a>
+        </header>
+
+        <div id="loading">INITIALIZING SYSTEM...</div>
+
+        <div id="content" style="display: none;">
+            <div class="package-card">
+                <div class="package-title-row">
+                    <img id="pkg-icon" src="" class="package-icon" alt="">
+                    <div>
+                        <div id="pkg-id" class="package-id"></div>
+                        <h2 id="pkg-name" class="package-name"></h2>
+                    </div>
+                </div>
+
+                <div class="description" id="pkg-desc"></div>
+
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="detail-label">Version</div>
+                        <div class="detail-val" id="pkg-version"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Compatibility</div>
+                        <div class="detail-val">iOS 14.0+</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Section</div>
+                        <div class="detail-val">Tweaks</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Price</div>
+                        <div class="detail-val">Free</div>
+                    </div>
+                </div>
+
+                <div class="action-bar">
+                    <a id="download-link" href="#" class="btn-main">DOWNLOAD .DEB</a>
+                    <a href="sileo://source/https://darwin-iq.github.io/" class="btn-sec">ADD SOURCE</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="topbar-right"><span class="status-dot"></span>ONLINE</div>
-  </div>
 
-  <main class="page" id="depiction-app">
-    <div class="page-grid">
-      <section class="terminal-window" aria-live="polite">
-        <div class="terminal-header">
-          <div class="terminal-dots">
-            <span class="dot dot-red"></span>
-            <span class="dot dot-yellow"></span>
-            <span class="dot dot-green"></span>
-          </div>
-          <div class="terminal-tab">~/depictions — zsh</div>
-        </div>
-        <div class="terminal-body" id="depiction-main">
-          <div class="prompt">
-            <span class="prompt-user">darwin@iq</span>
-            <span class="prompt-arrow">~</span>
-            <span class="prompt-arrow">❯</span>
-            <span class="prompt-cmd">pkg info<span class="cursor"></span></span>
-          </div>
-          <div class="spacer"></div>
-          <div class="empty">
-            <h1>Package not selected</h1>
-            <div>Open a package from the catalog.</div>
-          </div>
-        </div>
-      </section>
+    <script>
+        // Data from packages.js (should be available globally)
+        // For fallback if data isn't loaded yet
+        window.addEventListener('load', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const packageId = urlParams.get('package') || 'com.darwiniq.autoclicker';
 
-      <aside class="panel" id="depiction-meta" aria-label="Package metadata">
-        <h2>Source</h2>
-        <dl>
-          <div class="meta-card">
-            <dt>Repository</dt>
-            <dd>DaRwin-iQ</dd>
-          </div>
-          <div class="meta-card">
-            <dt>URL</dt>
-            <dd>https://darwin-iq.github.io/</dd>
-          </div>
-        </dl>
-        <div class="panel-footer">
-          <a class="add-btn" href="sileo://source/https://darwin-iq.github.io/" data-add-source="sileo">Add to Sileo</a>
-          <a class="ghost-btn" href="../">Back Home</a>
-          <div class="panel-note">Open a package from the source to see details, metadata, and download links.</div>
-          <div class="panel-url">depictions/?package=com.darwiniq.autoclicker&amp;v=7</div>
-        </div>
-      </aside>
-    </div>
-    <div class="footer">DaRwin-iQ • https://darwin-iq.github.io/</div>
-  </main>
+            // Wait for packages array to be available
+            const checkData = setInterval(() => {
+                if (window.packages) {
+                    clearInterval(checkData);
+                    renderPackage(packageId);
+                }
+            }, 100);
 
-  <script src="../assets/js/site.js?v=5" defer></script>
-  <script src="../assets/js/packages.js?v=6" defer></script>
-  <script src="../assets/js/depiction.js?v=7" defer></script>
+            // Timeout after 3s
+            setTimeout(() => clearInterval(checkData), 3000);
+        });
+
+        function renderPackage(id) {
+            const pkg = window.packages.find(p => p.id === id);
+            if (!pkg) {
+                document.getElementById('loading').textContent = 'ERROR: PACKAGE NOT FOUND';
+                return;
+            }
+
+            document.getElementById('pkg-icon').src = `../assets/package-icons/${id}.png`;
+            document.getElementById('pkg-id').textContent = `# ${pkg.id}`;
+            document.getElementById('pkg-name').textContent = pkg.name;
+            document.getElementById('pkg-desc').textContent = pkg.desc;
+            document.getElementById('pkg-version').textContent = `v${pkg.version}`;
+            document.getElementById('download-link').href = `../${pkg.download}`;
+
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+    </script>
+    
+    <script src="../assets/js/packages.js"></script>
 </body>
 </html>
