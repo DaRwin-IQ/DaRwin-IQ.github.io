@@ -1,93 +1,104 @@
-Package: com.darwiniq.autoclicker
-Version: 1.0.1
-Architecture: iphoneos-arm64
-Maintainer: DarwinIQ
-Installed-Size: 2044
-Depends: firmware (>= 14.0), ellekit | mobilesubstrate | org.coolstar.libhooker | libhooker
-Filename: ./debs/com.darwiniq.autoclicker_1.0.1_iphoneos-arm64.deb
-Size: 1282386
-MD5sum: dd4a4bad12c1358f5cfd2d956a96352f
-SHA1: 041e71dab7c85bebebd7b2d8cfb89fe6a10e76bc
-SHA256: 22a69f34aed37d984c65d4b838d4e7d75bef0fc145360b09fdfa18660cf0234b
-Section: Tweaks
-Description: An iOS automation tweak built to record, replay, and manage touch actions safely and efficiently.
-Author: DarwinIQ
-Name: AUTO CLICKER / TOUCH
-Sileodepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker/depiction.json
-
 Package: com.darwiniq.autoclicker.rootful
+Name: AUTO CLICKER / TOUCH (Rootful)
 Version: 1.0.0
 Architecture: iphoneos-arm
 Maintainer: DarwinIQ
-Installed-Size: 1928
+Author: DarwinIQ
+Section: Tweaks
+Priority: optional
 Depends: firmware (>= 14.0), ellekit | mobilesubstrate | org.coolstar.libhooker | libhooker
 Conflicts: com.darwiniq.autoclicker
 Replaces: com.darwiniq.autoclicker
-Filename: ./debs/com.darwiniq.autoclicker.rootful_1.0.0_iphoneos-arm.deb
+Description: Rootful iOS automation tweak built to record, replay, and manage touch actions safely and efficiently.
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker.rootful&v=7
+SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker/depiction1.json
+Icon: https://darwin-iq.github.io/CydiaIcon.png
+Filename: https://github.com/DaRwin-IQ/DaRwin-IQ.github.io/releases/download/v1.0.0/com.darwiniq.autoclicker.rootful_1.0.0_iphoneos-arm.deb
 Size: 1259798
 MD5sum: 21a4c46f055db23439aeff67184aa186
 SHA1: d4d8d10e60abdaa755308f8606d69c9f9dcbb16a
 SHA256: ddb990b54e15ccf22d1f1f12d883625a50c5c08e22128a7f9aae97a63e551a72
-Section: Tweaks
-Description: Rootful iOS automation tweak built to record, replay, and manage touch actions safely and efficiently.
-Author: DarwinIQ
-Name: AUTO CLICKER / TOUCH (Rootful)
-Sileodepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker/depiction1.json
+Installed-Size: 1928
 
 Package: com.darwiniq.autoclicker.roothide
+Name: AUTO CLICKER / TOUCH (Roothide)
 Version: 1.0.1
 Architecture: iphoneos-arm64e
 Maintainer: DarwinIQ
-Installed-Size: 2044
+Author: DarwinIQ
+Section: Tweaks
+Priority: optional
 Depends: firmware (>= 15.0), ellekit | mobilesubstrate | org.coolstar.libhooker | libhooker
-Filename: ./debs/com.darwiniq.autoclicker.roothide_1.0.1_iphoneos-arm64e.deb
+Description: Roothide build of AUTO CLICKER / TOUCH for recording, replaying, and managing touch actions.
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker.roothide&v=7
+SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker.roothide/depiction.json
+Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.roothide.png
+Filename: https://github.com/DaRwin-IQ/DaRwin-IQ.github.io/releases/download/v1.0.1/com.darwiniq.autoclicker.roothide_1.0.1_iphoneos-arm64e.deb
 Size: 1283358
 MD5sum: 8fc3a294c5f70b46c89b156e3baa5344
 SHA1: 46d1ee97f16aa0042689678f42555198da147865
 SHA256: 32afce57e239b0435cc4448e3eba803a29dd6baff04f0210079f02f6543548e2
-Section: Tweaks
-Description: Roothide build of AUTO CLICKER / TOUCH for recording, replaying, and managing touch actions.
+Installed-Size: 2044
+
+Package: com.darwiniq.autoclicker
+Name: AUTO CLICKER / TOUCH
+Version: 1.0.1
+Architecture: iphoneos-arm64
+Maintainer: DarwinIQ
 Author: DarwinIQ
-Name: AUTO CLICKER / TOUCH (Roothide)
-Sileodepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker.roothide/depiction.json
+Section: Tweaks
+Priority: optional
+Depends: firmware (>= 14.0), ellekit | mobilesubstrate | org.coolstar.libhooker | libhooker
+Description: An iOS automation tweak built to record, replay, and manage touch actions safely and efficiently.
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.autoclicker&v=7
+SileoDepiction: https://darwin-iq.github.io/depictions/com.darwiniq.autoclicker/depiction.json
+Icon: https://darwin-iq.github.io/assets/package-icons/com.darwiniq.autoclicker.png
+Filename: https://github.com/DaRwin-IQ/DaRwin-IQ.github.io/releases/download/v1.0.1/com.darwiniq.autoclicker_1.0.1_iphoneos-arm64.deb
+Size: 1282386
+MD5sum: dd4a4bad12c1358f5cfd2d956a96352f
+SHA1: 041e71dab7c85bebebd7b2d8cfb89fe6a10e76bc
+SHA256: 22a69f34aed37d984c65d4b838d4e7d75bef0fc145360b09fdfa18660cf0234b
+Installed-Size: 2044
 
 Package: com.darwiniq.notiflow
+Name: Notiflow
 Version: 1.0.1
 Architecture: iphoneos-arm
 Maintainer: darwiniq
-Installed-Size: 1816
+Author: darwiniq
+Section: Tweaks
+Priority: optional
 Depends: firmware (>= 15.0), applist, ellekit | mobilesubstrate (>= 0.9.5000) | org.coolstar.libhooker | libhooker
-Filename: ./debs/com.darwiniq.notiflow_1.0.1_iphoneos-arm.deb
+Description: Notiflow is a notification history manager built to keep your alerts organized and accessible.
+  أداة تحفظ الإشعارات الواردة على جهازك وتعرضها في سجل منظم، مع إمكانية البحث والتصفية والحذف.
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.notiflow&v=7
+Icon: https://raw.githubusercontent.com/DaRwin-IQ/DaRwin-IQ.github.io/main/assets/package-icons/AppIcon1024.png
+Filename: https://github.com/DaRwin-IQ/DaRwin-IQ.github.io/releases/download/v1.0.1/com.darwiniq.notiflow_1.0.1_iphoneos-arm.deb
 Size: 1391792
 MD5sum: be18df761fdf3e1d8800451b02a2ec23
 SHA1: a8956b76b2da57f2f5a2e1c12025a32a94f3c2ee
 SHA256: a465a7c2b05e73d9de66c1ee6e56d840e25bd742a69e84b83575ffab2842b917
-Section: Tweaks
-Priority: optional
-Description: Notiflow is a notification history manager built to keep your alerts organized and accessible.
-  أداة تحفظ الإشعارات الواردة على جهازك وتعرضها في سجل منظم، مع إمكانية البحث والتصفية والحذف.
-Author: darwiniq
-Icon: https://raw.githubusercontent.com/DaRwin-IQ/DaRwin-IQ.github.io/main/assets/package-icons/AppIcon1024.png
-Name: Notiflow
+Installed-Size: 1816
 Tags: purpose::tweak, compatible::ios15, compatible::ios16
 
 Package: com.darwiniq.notiflow
+Name: Notiflow
 Version: 1.0.1
 Architecture: iphoneos-arm64
 Maintainer: darwiniq
-Installed-Size: 1816
+Author: darwiniq
+Section: Tweaks
+Priority: optional
 Depends: firmware (>= 15.0), applist, ellekit | mobilesubstrate (>= 0.9.5000) | org.coolstar.libhooker | libhooker
-Filename: ./debs/com.darwiniq.notiflow_1.0.1_iphoneos-arm64.deb
+Description: Notiflow is a notification history manager built to keep your alerts organized and accessible.
+  أداة تحفظ الإشعارات الواردة على جهازك وتعرضها في سجل منظم، مع إمكانية البحث والتصفية والحذف.
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.notiflow&v=7
+Icon: https://raw.githubusercontent.com/DaRwin-IQ/DaRwin-IQ.github.io/main/assets/package-icons/AppIcon1024.png
+Filename: https://github.com/DaRwin-IQ/DaRwin-IQ.github.io/releases/download/v1.0.1/com.darwiniq.notiflow_1.0.1_iphoneos-arm64.deb
 Size: 1391818
 MD5sum: 5a6230b8bfcdc72966618f7bc1c9381f
 SHA1: d3800a14464fe95397ff1cc39c274897c63b1d1f
 SHA256: 3196ebc929053c25442a7ba63c81ec26c86623c7418d8e908c0abfebcfcadc91
-Section: Tweaks
-Priority: optional
-Description: Notiflow is a notification history manager built to keep your alerts organized and accessible.
-  أداة تحفظ الإشعارات الواردة على جهازك وتعرضها في سجل منظم، مع إمكانية البحث والتصفية والحذف.
-Author: darwiniq
-Icon: https://raw.githubusercontent.com/DaRwin-IQ/DaRwin-IQ.github.io/main/assets/package-icons/AppIcon1024.png
-Name: Notiflow
+Installed-Size: 1816
 Tags: purpose::tweak, compatible::ios15, compatible::ios16
 
