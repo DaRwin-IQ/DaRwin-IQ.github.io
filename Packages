@@ -102,3 +102,24 @@ SHA256: 3196ebc929053c25442a7ba63c81ec26c86623c7418d8e908c0abfebcfcadc91
 Installed-Size: 1816
 Tags: purpose::tweak, compatible::ios15, compatible::ios16
 
+Package: com.darwiniq.notiflow
+Name: Notiflow (RootHide)
+Version: 1.0.2
+Architecture: iphoneos-arm64e
+Maintainer: darwiniq
+Author: darwiniq
+Section: Tweaks
+Priority: optional
+Depends: firmware (>= 15.0), ellekit | mobilesubstrate (>= 0.9.5000) | org.coolstar.libhooker | libhooker
+Description: Notiflow is a notification history manager built to keep your alerts organized and accessible.
+  أداة تحفظ الإشعارات الواردة على جهازك وتعرضها في سجل منظم، مع إمكانية البحث والتصفية والحذف.
+Depiction: https://darwin-iq.github.io/depictions/?package=com.darwiniq.notiflow&v=7
+Icon: https://raw.githubusercontent.com/DaRwin-IQ/DaRwin-IQ.github.io/main/assets/package-icons/AppIcon1024.png
+Filename: https://github.com/DaRwin-IQ/DaRwin-IQ.github.io/releases/download/v1.0.2/com.darwiniq.notiflow_1.0.2_iphoneos-arm64e.deb
+Size: 1391888
+MD5sum: 80cd4958c089a1cdf5f19f33e6709062
+SHA1: 09b1206a662c9bef3f70711a29213cbc997700b7
+SHA256: 1265cc107ce1eb57434f8456f12c9495d99e4d5a7fde7d7970e38048b1f37f5f
+Installed-Size: 1816
+Tags: purpose::tweak, compatible::ios15, compatible::ios16
+

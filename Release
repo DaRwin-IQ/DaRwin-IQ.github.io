@@ -3,23 +3,23 @@ Label: DaRwin-iQ
 Suite: iphoneos
 Version: 1.0
 Codename: iphoneos
-Date: Sun, 12 Jul 2026 23:12:45 GMT
+Date: Mon, 13 Jul 2026 22:04:30 GMT
 Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: An advanced iOS jailbreak package source with Rootful, Rootless, and Roothide support for arm64-arm64e devices.
 Maintainer: DaRwin iQ <lldrwll@gmail.com>
 MD5Sum:
- 12c62bd2f909c3c72a7887aa1cbe7a07             5341 Packages
- f392d66accb6aa5ef3f3158022f2c908             1508 Packages.gz
- 935e1cdab90725a8f75027759aa3c94b             1795 Packages.bz2
- 09d98b45faa9a440d8fb858a86a276eb             1472 Packages.xz
+ d3c7d0d3c081fdf19eaa9f8d80d87fd6             6487 Packages
+ eb26c7509db5ff5e44791f58493bcb63             1639 Packages.gz
+ 5ba6abe11a56221b9e2877bac8a06628             1920 Packages.bz2
+ 603bbdb8d53948f36d0c8282799b0ae2             1580 Packages.xz
 SHA1:
- d110680dece6e8de344065dbda4be6aac516f86a             5341 Packages
- ac20ca35a9e7af209d1016dff9e3fb166a4be601             1508 Packages.gz
- 7d3d888077cf729052b6f38537461ff77ba9edc8             1795 Packages.bz2
- 6355c0b2bf57f81b5477367b53ade27d68f686c2             1472 Packages.xz
+ f08465fce956c0969eb251e74834fd77be2ba6ff             6487 Packages
+ 6d65e9c1f7e2d51444624f3e620ac3299b09ee5b             1639 Packages.gz
+ 7be8e838650f59f72c38d2b4992e66d02e3c12d7             1920 Packages.bz2
+ 096193cc6bc4368307b5f5dad09e3233389b0efe             1580 Packages.xz
 SHA256:
- 72b588d5af4f20e30f5f0719fb9444d1ef9569c1863484f06801ab568c0c996c             5341 Packages
- 1d2063c6f561a468cbcf23f60a76fed0d6569328c3b029c793338f3c5cebd18f             1508 Packages.gz
- 990ed622467c32b60386d14a6bf9ab9f77cf8065bb21998a1b96886e046fda41             1795 Packages.bz2
- 21a76ca7478d56ff85d54f3202ef16fcf9c9dd0bb8b7131e698fd9b2a1495959             1472 Packages.xz
+ dc990cd29c8af625e0674b86073e4ab52bd54fa1c72e6f111871f2b673fc96a8             6487 Packages
+ c73703a4541c7d29f78d46f9a4042ae9efebec8c35d9e8f4e034f4f9f7440d3c             1639 Packages.gz
+ 6a6b0764e4d3bfe2d8b862ac939dde6e33bccf832eb91ada7bb77133bf9afd5f             1920 Packages.bz2
+ 7785a7679ad248fbafb4b222195129304869817d91ff4658eeeaaf26d1d9a89c             1580 Packages.xz
